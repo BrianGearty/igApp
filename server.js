@@ -1,16 +1,16 @@
-const express = require('express');
+// const express = require('express');
 
 
-// Initialize the app and create a port
-const app = express();
-const PORT = process.env.PORT || 3001;
+// // Initialize the app and create a port
+// const app = express();
+// const PORT = process.env.PORT || 3001;
 
-// Set up body parsing, static, and route middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+// // Set up body parsing, static, and route middleware
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.static('public'));
 
 
 
-// Start the server on the port
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+// // Start the server on the port
+// app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
