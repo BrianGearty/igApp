@@ -4,6 +4,8 @@
 //   &scope=user_profile,user_media
 //   &response_type=code
 
+//comment
+
 function getURL(){
     var href = window.location.href;
     var query = window.location.search;
