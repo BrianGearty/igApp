@@ -6,7 +6,7 @@
 
 function getURL(){
     var query = window.location.search;
-    console.log(query.split("?=code")[1])
+    console.log(query.split("=")[1])
 
     }
     getURL();
