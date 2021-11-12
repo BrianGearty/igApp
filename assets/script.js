@@ -7,6 +7,7 @@
 function getURL(){
     var query = window.location.search;
     var splitQuery = query.split("=")[1];
+    console.log(splitQuery)
     pushParams(splitQuery);
     }
     getURL();
@@ -23,7 +24,8 @@ function authIg(){
 
     let appId = "215321604061729";
 	// let redUri = window.location.origin + "/igApp";
-    let redUri = "https://briangearty.github.io/igApp/"
+    //let redUri = "https://briangearty.github.io/igApp/"
+    let redUri = "file:///Users/briangearty/igApp/index.html"
 	let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
 	window.open(url, "_self").focus();
 
@@ -32,20 +34,20 @@ function authIg(){
 }
 
 function pushParams(query){
+    console.log(query)
+
     if(!query){
         return;
     } else {
 
-        let url = "https://api.instagram.com/oauth/access_token"
-        fetch(url, {method: "POST"}, {
-            code: query,
-            redirectUrl: "https://briangearty.github.io/igApp/",
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
+        // let url = "https://api.instagram.com/oauth/access_token"
+        // fetch(url, {method: "POST"}, {
+        //     code: query,
+        //     redirectUrl: "https://briangearty.github.io/igApp/",
+        // })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
         
-
-
     }
 
 
