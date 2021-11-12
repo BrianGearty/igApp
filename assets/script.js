@@ -40,13 +40,13 @@ function pushParams(query){
         return;
     } else {
 
-        // let url = "https://api.instagram.com/oauth/access_token"
-        // fetch(url, {method: "POST"}, {
-        //     code: query,
-        //     redirectUrl: "https://briangearty.github.io/igApp/",
-        // })
-        // .then(response => response.json())
-        // .then(data => console.log(data))
+        let url = "https://api.instagram.com/oauth/access_token"
+        fetch(url, {method: "POST"}, {
+            code: query,
+            redirectUrl: "https://briangearty.github.io/igApp/",
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
         
     }
 
