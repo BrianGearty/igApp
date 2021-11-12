@@ -31,7 +31,7 @@ function authIg(){
 
 }
 
-async function pushParams(query){
+function pushParams(query){
     if(!query){
         return;
     } else {
