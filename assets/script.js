@@ -6,8 +6,8 @@
 
 function getURL(){
     var query = window.location.search;
-    console.log(query.split("=")[1])
-
+    var splitQuery = query.split("=")[1];
+    pushParams(splitQuery);
     }
     getURL();
 
@@ -31,11 +31,24 @@ function authIg(){
 
 }
 
-async function pushParams(){
-    let url = "https://api.instagram.com/oauth/access_token"
-fetch(url, {method: "POST"})
-.then(response => response.json())
-.then(data => console.log(data))
+async function pushParams(query){
+    if(!query){
+        return;
+    } else {
+
+        let url = "https://api.instagram.com/oauth/access_token"
+        fetch(url, {method: "POST"}, {
+            code: query,
+            redirectUrl: "https://briangearty.github.io/igApp/",
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        
+
+
+    }
+
+
 
 }
 
