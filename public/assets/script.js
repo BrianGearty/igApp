@@ -5,6 +5,7 @@
 //   &response_type=code
 
 //comment
+console.log("youuoou")
 
 function getURL(){
     var href = window.location.href;
