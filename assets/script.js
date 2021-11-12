@@ -4,7 +4,7 @@
 //   &scope=user_profile,user_media
 //   &response_type=code
 
-console.log("connected")
+
 let igUsernameInput = document.getElementById("username");
 
 const igConnectBtn = document.getElementById("connectBtn")
