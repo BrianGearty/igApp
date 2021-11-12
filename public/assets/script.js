@@ -36,9 +36,6 @@ function authIg(){
 function pushParams(query){
     console.log("QUERY IN PUSH PARAMS",query)
 
-    if(!query){
-        return;
-    } else {
 
         let url = "https://api.instagram.com/oauth/access_token"
         fetch(url, {method: "POST"}, {
@@ -48,7 +45,7 @@ function pushParams(query){
         .then(response => response.json())
         .then(data => console.log(data))
         
-    }
+    
 
 
 
