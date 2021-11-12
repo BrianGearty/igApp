@@ -15,8 +15,8 @@ igConnectBtn.addEventListener("click", function(){
 })
 
 function authIg(){
-    let appId = "215321604061729";
-    //let appId = "1169296783813924"
+    //let appId = "215321604061729";
+    let appId = "1169296783813924"
 	let redUri = window.location.origin + "/insta";
 	let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
 	window.open(url, "_blank").focus();
