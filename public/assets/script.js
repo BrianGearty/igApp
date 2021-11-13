@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 // https://api.instagram.com/oauth/authorize
 //   ?client_id=215321604061729
 //   &redirect_uri=https://briangearty.github.io/igApp/
@@ -42,10 +44,10 @@ function pushParams(query){
 
         let url = "https://api.instagram.com/oauth/access_token"
         fetch(url, {method: "POST"}, {
-            client_id: '215321604061729',
-            client_secret: 'ebe0d042ab0d30e443d7766de43149f2',
-            grant_type:'authorization_code',
-            redirect_uri: 'briangearty.github.io/igApp/',
+            client_id: process.env.CLIENT_ID,
+            client_secret: process.env.CLIENT_SECRET,
+            grant_type: process.env.GRANT_TYPE,
+            redirect_uri: process.env.REDIRECT_URI,
             code: query,
         })
         .then(response => response.json())
