@@ -37,13 +37,13 @@ function authIg(){
 }
 
 function pushParams(query){
-    console.log("QUERY IN PUSH PARAMS",query)
+    console.log("QUERY IN PUSH",query)
 
 
         let url = "https://api.instagram.com/oauth/access_token"
         fetch(url, {method: "POST"}, {
-            client_id: 215321604061729,
-            client_secret: ebe0d042ab0d30e443d7766de43149f2,
+            client_id: '215321604061729',
+            client_secret: 'ebe0d042ab0d30e443d7766de43149f2',
             grant_type:'authorization_code',
             redirect_uri: 'briangearty.github.io/igApp/',
             code: query,
