@@ -42,8 +42,11 @@ function pushParams(query){
 
         let url = "https://api.instagram.com/oauth/access_token"
         fetch(url, {method: "POST"}, {
+            client_id: 215321604061729,
+            client_secret: ebe0d042ab0d30e443d7766de43149f2,
+            grant_type:'authorization_code',
+            redirect_uri: 'briangearty.github.io/igApp/',
             code: query,
-            redirectUrl: "https://briangearty.github.io/igApp/",
         })
         .then(response => response.json())
         .then(data => console.log(data))
