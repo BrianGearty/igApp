@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 
 // https://api.instagram.com/oauth/authorize
 //   ?client_id=215321604061729
