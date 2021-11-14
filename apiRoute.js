@@ -24,7 +24,7 @@ router.post("/api/insta", async (req, res) => {
         });
 
         accessToken = result.access_token;
-        res.send(result.access_token)
+        res.send(accessToken)
 
     } catch (e) {
         console.log("ERROR HAPPENS HERE", e);
