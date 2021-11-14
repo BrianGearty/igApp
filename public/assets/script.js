@@ -5,16 +5,16 @@
 //   &redirect_uri=https://briangearty.github.io/igApp/
 //   &scope=user_profile,user_media
 //   &response_type=code
-
-//comment
-console.log("youuoou")
+let splitQuery;
 
 function getURL() {
-    var href = window.location.href;
-    var query = window.location.search;
-    var splitQuery = query.split("=")[1];
-    console.log(splitQuery)
-    pushParams(splitQuery);
+    setTimeout(function(){
+        let query = window.location.search;
+        splitQuery = query.split("=")[1];
+        console.log(splitQuery)
+        pushParams(splitQuery)
+    }, 5000)
+
 }
 getURL();
 
@@ -24,12 +24,14 @@ const igConnectBtn = document.getElementById("connectBtn")
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
+    pushParams(splitQuery)
 })
 
 function authIg() {
 
     let appId = "215321604061729";
     // let redUri = window.location.origin + "/igApp";
+    //let redUri = "https://locahost:3001/"
     let redUri = "https://briangearty.github.io/igApp/"
     let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
     window.open(url, "_self").focus();
@@ -41,11 +43,19 @@ function authIg() {
 function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
+    let code = {
+        redirect_uri: "https://briangearty.github.io/igApp/",
+        code: query,
+    }
+
 
     let url = "/api/insta"
-    fetch(url, { method: "POST" }, {
-        redirect_uri: "briangearty.github.io/igApp/",
-        code: query,
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(code),
     })
         .then(response => response.json())
         .then(data => console.log(data))

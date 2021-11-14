@@ -1,15 +1,18 @@
 const router = require("express").Router();
 const request = require('request');
 
-router.post("/", async (req, res) => {
+router.post("/api/insta", async (req, res) => {
     //let code = req.body.code;
     //let redirectUri = req.body.redirectUri;
+    console.log("HIT /API/INSTAAAAAAAAAAAA", req.body)
+
+    //console.log("HIT /API/INSTAAAAAAAAAAAA", res )
 
     let accessToken = null;
     try {
 
         // send form based request to Instagram API
-        let result = await request.post({
+        const result = await request.post({
             url: 'https://api.instagram.com/oauth/access_token',
             form: {
                 client_id: process.env.CLIENT_ID,
@@ -19,12 +22,14 @@ router.post("/", async (req, res) => {
                 code: req.body.code
             }
         });
-
-        // Got access token. Parse string response to JSON
-        accessToken = JSON.parse(result).access_token;
+        res.json(result)
+        console.log("RESUlttttt", result)
+        console.log(typeof result)
+        accessToken = result.access_token;
         console.log("access token", accessToken)
     } catch (e) {
-        console.log("Error=====", e);
+        console.log("ERROR HAPPENS HERE", e);
+        res.status(500).json(e)
     }
 })
 
