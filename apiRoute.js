@@ -18,9 +18,10 @@ router.post("/api/insta", async (req, res) => {
                 client_id: process.env.CLIENT_ID,
                 client_secret: process.env.CLIENT_SECRET,
                 grant_type: 'authorization_code',
-                redirect_uri: req.body.redirectUri,
+                redirect_uri: req.body.redirect_uri,
                 code: req.body.code
             }
+
         });
 
         console.log("RESPONSE FROM INSTAGRAM RESULT", result)
