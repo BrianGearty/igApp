@@ -58,14 +58,11 @@ function pushParams(query) {
         body: JSON.stringify(code),
     })
         .then(response => response.json())
-        .then(data => {
-            console.log("DATA FROM POST",data)
-            getUser();
-        })
+        .then(data => getUser(data))
 }
 
-function getUser(){
-    fetch()
+function getUser(data){
+    console.log("DATA FROM POST IN GET USER", data)
 }
 
 
