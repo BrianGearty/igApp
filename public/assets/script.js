@@ -56,7 +56,10 @@ function pushParams(query) {
     let url = "/api/insta"
     fetch(url, {
         method: "POST",
-        body: searchParams
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(params)
     })
         .then(response => console.log(response))
         // .then(response => response.json())
@@ -78,6 +81,7 @@ function getUser(data){
 }
 
 
+// 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8
 
 //   curl -X POST \
 //   https://api.instagram.com/oauth/access_token \
