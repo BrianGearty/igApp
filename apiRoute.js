@@ -24,7 +24,7 @@ router.post("/api/insta", async (req, res) => {
         });
 
         console.log("RESPONSE FROM INSTAGRAM RESULT", result)
-        accessToken = result.access_token;
+        accessToken = JSON.parse(result.access_token);
         res.send(accessToken)
 
     } catch (e) {
