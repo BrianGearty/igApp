@@ -4,7 +4,6 @@
 //   &redirect_uri=https://briangearty.github.io/igApp/
 //   &scope=user_profile,user_media
 
-const { response } = require("express");
 
 //   &response_type=code
 let splitQuery;
