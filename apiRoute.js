@@ -4,7 +4,7 @@ const request = require('request');
 router.post("/api/insta", async (req, res) => {
     //let code = req.body.code;
     //let redirectUri = req.body.redirectUri;
-    console.log("HIT /API/INSTAAAAAAAAAAAA", req.body.code)
+    console.log("HIT /API/INSTAAAAAAAAAAAA", req.body)
 
     //console.log("HIT /API/INSTAAAAAAAAAAAA", res )
 
