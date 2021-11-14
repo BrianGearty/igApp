@@ -41,18 +41,25 @@ function authIg() {
 function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
-    let code = {
+    let params = {
         redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
         code: query,
     }
 
-    console.log("CODE IN PUSH", code)
+    const searchParams = Object.keys(params).map((key) => {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+    }).join('&');
+
+    console.log(searchParams)
 
 
     let url = "/api/insta"
     fetch(url, {
         method: "POST",
-        body: JSON.stringify(code),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: searchParams
     })
         .then(response => console.log(response))
         // .then(response => response.json())
@@ -66,6 +73,7 @@ function pushParams(query) {
         .catch(err => {
             console.log("Error in fetch", err);
         });
+    
 }
 
 function getUser(data){
