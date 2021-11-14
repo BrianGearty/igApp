@@ -1,7 +1,6 @@
 
 
 // https://api.instagram.com/oauth/authorize
-//   ?client_id=215321604061729
 //   &redirect_uri=https://briangearty.github.io/igApp/
 //   &scope=user_profile,user_media
 //   &response_type=code
@@ -31,8 +30,7 @@ function authIg() {
 
     let appId = "215321604061729";
     // let redUri = window.location.origin + "/igApp";
-    //let redUri = "https://locahost:3001/"
-    let redUri = "https://briangearty.github.io/igApp/"
+    let redUri = "https://stark-chamber-84959.herokuapp.com/"
     let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
     window.open(url, "_self").focus();
 
@@ -44,7 +42,7 @@ function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
     let code = {
-        redirect_uri: "https://briangearty.github.io/igApp/",
+        redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
         code: query,
     }
 
