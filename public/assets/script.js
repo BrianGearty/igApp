@@ -38,7 +38,7 @@ function authIg() {
 
 }
 
-function pushParams(query) {
+async function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
     let code = {
@@ -50,7 +50,7 @@ function pushParams(query) {
 
 
     let url = "/api/insta"
-    fetch(url, {
+    await fetch(url, {
         method: "POST",
         body: JSON.stringify(code),
     })
