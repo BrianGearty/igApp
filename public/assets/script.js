@@ -4,8 +4,6 @@
 //   &redirect_uri=https://briangearty.github.io/igApp/
 //   &scope=user_profile,user_media
 
-
-//   &response_type=code
 let splitQuery;
 
 function getURL() {
@@ -66,7 +64,6 @@ async function pushParams(query) {
         .then(data => getUser(data))
         .catch(err => {
             console.debug("Error in fetch", err);
-            setErrors(err)
         });
 }
 
