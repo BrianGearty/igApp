@@ -38,7 +38,7 @@ function authIg() {
 
 }
 
-async function pushParams(query) {
+function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
     let code = {
@@ -50,17 +50,18 @@ async function pushParams(query) {
 
 
     let url = "/api/insta"
-    await fetch(url, {
+    fetch(url, {
         method: "POST",
         body: JSON.stringify(code),
     })
+        .then(response => console.log(response))
         // .then(response => response.json())
-        .then(response => {
-            if (!response.ok) {
-                throw `Server error: [${response.status}] [${response.statusText}] [${response.url}]`;
-            }
-            return response.json();
-        })
+        // .then(response => {
+        //     if (!response.ok) {
+        //         throw `Server error: [${response.status}] [${response.statusText}] [${response.url}]`;
+        //     }
+        //     return response.json();
+        // })
         .then(data => getUser(data))
         .catch(err => {
             console.log("Error in fetch", err);
