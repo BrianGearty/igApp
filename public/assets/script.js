@@ -3,6 +3,9 @@
 // https://api.instagram.com/oauth/authorize
 //   &redirect_uri=https://briangearty.github.io/igApp/
 //   &scope=user_profile,user_media
+
+const { response } = require("express");
+
 //   &response_type=code
 let splitQuery;
 
@@ -38,7 +41,7 @@ function authIg() {
 
 }
 
-function pushParams(query) {
+async function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
     let code = {
@@ -50,14 +53,22 @@ function pushParams(query) {
 
 
     let url = "/api/insta"
-    fetch(url, {
+    return await fetch(url, {
         method: "POST",
         body: JSON.stringify(code),
     })
         // .then(response => response.json())
-        .then(resp => resp.text()).then(console.log)
+        .then(response => {
+            if (!response.ok) {
+                throw `Server error: [${response.status}] [${response.statusText}] [${response.url}]`;
+            }
+            return response.json();
+        })
         .then(data => getUser(data))
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.debug("Error in fetch", err);
+            setErrors(err)
+        });
 }
 
 function getUser(data){
