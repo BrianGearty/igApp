@@ -23,7 +23,6 @@ const igConnectBtn = document.getElementById("connectBtn")
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
-    pushParams(splitQuery)
 })
 
 function authIg() {
@@ -41,6 +40,7 @@ function authIg() {
 
 function pushParams(query) {
     console.log("QUERY IN PUSH", query)
+    console.log("CODE IN PUSH", code)
 
     let code = {
         redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
