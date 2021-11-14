@@ -38,7 +38,7 @@ function authIg() {
 
 }
 
-async function pushParams(query) {
+function pushParams(query) {
     console.log("QUERY IN PUSH", query)
 
     let code = {
@@ -50,7 +50,7 @@ async function pushParams(query) {
 
 
     let url = "/api/insta"
-    return await fetch(url, {
+    fetch(url, {
         method: "POST",
         body: JSON.stringify(code),
     })
@@ -63,7 +63,7 @@ async function pushParams(query) {
         })
         .then(data => getUser(data))
         .catch(err => {
-            console.debug("Error in fetch", err);
+            console.log("Error in fetch", err);
         });
 }
 
