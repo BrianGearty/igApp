@@ -12,7 +12,7 @@ function getURL() {
         splitQuery = query.split("=")[1];
         console.log(splitQuery)
         pushParams(splitQuery)
-    }, 5000)
+    }, 2000)
 
 }
 getURL();
