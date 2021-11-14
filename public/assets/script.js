@@ -58,8 +58,17 @@ function pushParams(query) {
         body: JSON.stringify(code),
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log("DATA FROM POST",data)
+            getUser();
+        })
 }
+
+function getUser(){
+    fetch()
+}
+
+
 
 //   curl -X POST \
 //   https://api.instagram.com/oauth/access_token \
