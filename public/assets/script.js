@@ -50,8 +50,8 @@ function pushParams(query) {
         return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
     }).join('&');
 
+    //const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
     console.log(searchParams)
-
 
     let url = "/api/insta"
     fetch(url, {
