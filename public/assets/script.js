@@ -9,54 +9,46 @@
 //comment
 console.log("youuoou")
 
-function getURL(){
+function getURL() {
     var href = window.location.href;
     var query = window.location.search;
     var splitQuery = query.split("=")[1];
     console.log(splitQuery)
     pushParams(splitQuery);
-    }
-    getURL();
+}
+getURL();
 
 let igUsernameInput = document.getElementById("username");
 
 const igConnectBtn = document.getElementById("connectBtn")
-igConnectBtn.addEventListener("click", function(){
+igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
 })
 
-function authIg(){
+function authIg() {
 
     let appId = "215321604061729";
-	// let redUri = window.location.origin + "/igApp";
+    // let redUri = window.location.origin + "/igApp";
     let redUri = "https://briangearty.github.io/igApp/"
-	let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
-	window.open(url, "_self").focus();
+    let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
+    window.open(url, "_self").focus();
 
     console.log(window.location)
 
 }
 
-function pushParams(query){
-    console.log("QUERY IN PUSH",query)
+function pushParams(query) {
+    console.log("QUERY IN PUSH", query)
 
 
-        let url = "https://api.instagram.com/oauth/access_token"
-        fetch(url, {method: "POST"}, {
-            client_id: process.env.CLIENT_ID,
-            client_secret: process.env.CLIENT_SECRET,
-            grant_type: process.env.GRANT_TYPE,
-            redirect_uri: process.env.REDIRECT_URI,
-            code: query,
-        })
+    let url = "/api/insta"
+    fetch(url, { method: "POST" }, {
+        redirect_uri: "briangearty.github.io/igApp/",
+        code: query,
+    })
         .then(response => response.json())
         .then(data => console.log(data))
-        
-    
-
-
-
 }
 
 //   curl -X POST \
