@@ -40,12 +40,13 @@ function authIg() {
 
 function pushParams(query) {
     console.log("QUERY IN PUSH", query)
-    console.log("CODE IN PUSH", code)
 
     let code = {
         redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
         code: query,
     }
+
+    console.log("CODE IN PUSH", code)
 
 
     let url = "/api/insta"
