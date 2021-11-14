@@ -4,7 +4,7 @@ const request = require('request');
 router.post("/api/insta", async (req, res) => {
     //let code = req.body.code;
     //let redirectUri = req.body.redirectUri;
-    console.log("HIT /API/INSTAAAAAAAAAAAA", req.body)
+    console.log("HIT /API/INSTAAAAAAAAAAAA", req.body.code)
 
     //console.log("HIT /API/INSTAAAAAAAAAAAA", res )
 
@@ -22,14 +22,24 @@ router.post("/api/insta", async (req, res) => {
                 code: req.body.code
             }
         });
+
         res.json(result)
-        console.log("RESUlttttt", result)
-        console.log(typeof result)
         accessToken = result.access_token;
         console.log("access token", accessToken)
     } catch (e) {
         console.log("ERROR HAPPENS HERE", e);
         res.status(500).json(e)
+    }
+})
+
+router.get("/api/insta", async (req, res)=>{
+    console.log("/API/GETTTTTTTTTTTTTTT",res)
+    try{
+
+    
+
+    } catch (err){
+
     }
 })
 
