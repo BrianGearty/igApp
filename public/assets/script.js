@@ -62,7 +62,7 @@ function pushParams(query) {
 }
 
 function getUser(data){
-    console.log("DATA FROM POST IN GET USER", data)
+    console.log("DATA FROM POST IN GET USER", data.access_token)
 }
 
 

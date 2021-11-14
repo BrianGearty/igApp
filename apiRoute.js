@@ -23,16 +23,8 @@ router.post("/api/insta", async (req, res) => {
             }
         });
 
-        res.send(result.access_token)
         accessToken = result.access_token;
-        try{
-            let resp = await fetch(`https://graph.instagram.com/${process.env.CLIENT_ID}/media?access_token=${accessToken}`)
-            res.status(200).json(resp);
-            console.log("HIT THE GET FOR GRAPH", resp)
-
-        } catch (err){
-            res.status(500).json(err)
-        }
+        res.send(result.access_token)
 
     } catch (e) {
         console.log("ERROR HAPPENS HERE", e);
@@ -40,15 +32,5 @@ router.post("/api/insta", async (req, res) => {
     }
 })
 
-router.get("/api/insta", async (req, res)=>{
-    console.log("/API/GETTTTTTTTTTTTTTT",res)
-    try{
-
-    
-
-    } catch (err){
-
-    }
-})
 
 module.exports = router;
