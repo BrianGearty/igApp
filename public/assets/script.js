@@ -2,9 +2,9 @@
 let splitQuery;
 
 function getURL() {
-        let query = window.location.search;
-        splitQuery = query.split("=")[1];
-        console.log(splitQuery)
+    let query = window.location.search;
+    splitQuery = query.split("=")[1];
+    console.log(splitQuery)
 }
 getURL();
 
@@ -23,7 +23,7 @@ authIgBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
     console.log("clicked")
-    
+
 })
 
 
@@ -38,18 +38,28 @@ function authIg() {
 
 }
 
-other = async(query)=>{
-return await fetch("/api/insta", {
-    method: "POST",
-    headers: {
-    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-    },
-    body: {
-    code: query,
-    redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
+other = (query) => {
+
+    let params = {
+        redirect_uri: "https://localhost:3001/",
+        code: query,
     }
-}).then(response => console.log("RESPONSE FROM SERVER", response))
-    .catch(err => console.log(err))
+
+    const searchParams = Object.keys(params).map((key) => {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+    }).join('&');
+
+
+
+
+    fetch("/api/insta", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: searchParams,
+    }).then(response => console.log("RESPONSE FROM SERVER", response))
+        .catch(err => console.log(err))
 
 }
 
@@ -86,7 +96,7 @@ return await fetch("/api/insta", {
 //     } catch (e) {
 //         return e;
 //     }    
-    
+
 // }
 
 
