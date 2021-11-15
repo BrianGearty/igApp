@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const request = require('request');
 
-router.post("/api/insta", async (req, res) => {
-    //let code = req.body.code;
+router.post('https://stark-chamber-84959.herokuapp.com/api/insta', async (req, res) => {
     //let redirectUri = req.body.redirectUri;
     console.log("HIT /API/INSTAAAAAAAAAAAA", req.body)
 
