@@ -11,7 +11,7 @@ function getURL() {
         let query = window.location.search;
         splitQuery = query.split("=")[1];
         console.log(splitQuery)
-        pushParams(splitQuery)
+        
     }, 2000)
 
 }
@@ -23,6 +23,7 @@ const igConnectBtn = document.getElementById("connectBtn")
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
+    pushParams(splitQuery)
 })
 
 function authIg() {
