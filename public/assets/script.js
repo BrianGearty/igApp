@@ -59,6 +59,9 @@ pushParams = async (query)=> {
     try{
     let response = await fetch(url, {
         method: "POST",
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
         body: searchParams
     })
 
