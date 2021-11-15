@@ -56,19 +56,10 @@ function pushParams(query) {
     let url = "/api/insta"
     fetch(url, {
         method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(params)
+        body: searchParams
     })
         .then(response => console.log(response))
         // .then(response => response.json())
-        // .then(response => {
-        //     if (!response.ok) {
-        //         throw `Server error: [${response.status}] [${response.statusText}] [${response.url}]`;
-        //     }
-        //     return response.json();
-        // })
         .then(data => getUser(data))
         .catch(err => {
             console.log("Error in fetch", err);
