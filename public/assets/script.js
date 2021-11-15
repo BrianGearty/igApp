@@ -1,19 +1,10 @@
 
-
-// https://api.instagram.com/oauth/authorize
-//   &redirect_uri=https://briangearty.github.io/igApp/
-//   &scope=user_profile,user_media
-
 let splitQuery;
 
 function getURL() {
-    setTimeout(function(){
         let query = window.location.search;
         splitQuery = query.split("=")[1];
         console.log(splitQuery)
-        
-    }, 2000)
-
 }
 getURL();
 
@@ -49,8 +40,11 @@ function authIg() {
 
 function other(query){
 fetch("/api/insta", {
+    method: "POST",
+    body: {
     code: query,
     redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
+    }
 }).then(response => console.log("RESPONSE FROM SERVER", response))
     .catch(err => console.log(err))
 
@@ -90,10 +84,6 @@ fetch("/api/insta", {
 //         return e;
 //     }    
     
-// }
-
-// function getUser(data){
-//     console.log("DATA FROM POST IN GET USER", data)
 // }
 
 
