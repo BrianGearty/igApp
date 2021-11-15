@@ -22,62 +22,79 @@ let igUsernameInput = document.getElementById("username");
 const igConnectBtn = document.getElementById("connectBtn")
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
-    authIg()
-    pushParams(splitQuery)
+    //pushParams(splitQuery)
+    other(splitQuery)
+
 })
+
+const authIgBtn = document.getElementById("authBtn");
+authIgBtn.addEventListener("click", function () {
+    //let username = igUsernameInput.value.trim();
+    authIg()
+    console.log("clicked")
+    
+})
+
 
 function authIg() {
 
     let appId = "215321604061729";
     // let redUri = window.location.origin + "/igApp";
-    //let redUri = "http://localhost:3001/"
+    //let redUri = "https://localhost:3001/"
     let redUri = "https://stark-chamber-84959.herokuapp.com/"
     let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
     window.open(url, "_self").focus();
 
-    console.log(window.location)
+}
+
+function other(){
+fetch("https://stark-chamber-84959.herokuapp.com/", {
+    code: query,
+    redirect_uri,
+}).then(response => console.log("RESPONSE FROM SERVER", response))
+    .catch(err => console.log(err))
 
 }
 
-pushParams = async (query)=> {
+// pushParams = async (query)=> {
 
 
-    console.log("QUERY IN PUSH", query)
+//     console.log("QUERY IN PUSH", query)
 
-    let params = {
-        redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
-        code: query,
-    }
+//     let params = {
+//         redirect_uri: "https://localhost:3001/",
+//         code: query,
+//     }
 
-    const searchParams = Object.keys(params).map((key) => {
-        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-    }).join('&');
+//     const searchParams = Object.keys(params).map((key) => {
+//         return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+//     }).join('&');
 
-    //const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
-    // console.log(searchParams)
+//     //const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
+//     // console.log(searchParams)
 
-    let url = "/api/insta"
-    try{
-    let response = await fetch(url, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-        },
-        body: searchParams
-    })
+//     let url = "/api/insta"
+//     try{
+//     let response = await fetch(url, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+//         },
+//         body: searchParams
+//     })
 
-    const data = await response.json();
-    console.log("DATA IN POST", data)
-        return data;
-    } catch (e) {
-        return e;
-    }    
+//     const data = await response.json();
+//     console.log("DATA IN POST", data)
+//         return data;
+//     } catch (e) {
+//         return e;
+//     }    
     
-}
+// }
 
-function getUser(data){
-    console.log("DATA FROM POST IN GET USER", data)
-}
+// function getUser(data){
+//     console.log("DATA FROM POST IN GET USER", data)
+// }
 
 
 // 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8
