@@ -41,7 +41,7 @@ function authIg() {
 other = (query) => {
 
     let params = {
-        redirect_uri: "https://localhost:3001/",
+        redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
         code: query,
     }
 
