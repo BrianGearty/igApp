@@ -48,9 +48,9 @@ function authIg() {
 }
 
 function other(query){
-fetch("https://stark-chamber-84959.herokuapp.com/", {
+fetch("/api/insta", {
     code: query,
-    redirect_uri,
+    redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
 }).then(response => console.log("RESPONSE FROM SERVER", response))
     .catch(err => console.log(err))
 
