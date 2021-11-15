@@ -53,7 +53,7 @@ pushParams = async (query)=> {
     }).join('&');
 
     //const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
-    console.log(searchParams)
+    // console.log(searchParams)
 
     let url = "/api/insta"
     try{
