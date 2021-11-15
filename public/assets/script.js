@@ -63,6 +63,7 @@ pushParams = async (query)=> {
     })
 
     const data = await response.json();
+    console.log("DATA IN POST", data)
         return data;
     } catch (e) {
         return e;
