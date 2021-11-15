@@ -62,7 +62,7 @@ function pushParams(query) {
         // .then(response => response.json())
         .then(data => getUser(data))
         .catch(err => {
-            console.log("Error in fetch", err);
+            console.log("Error in fetch", err.response.data);
         });
     
 }

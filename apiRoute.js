@@ -30,7 +30,7 @@ router.post("/api/insta", async (req, res) => {
 
     } catch (e) {
         console.log("ERROR HAPPENS HERE", e);
-        res.status(500).json(e)
+        res.status(500).json(e.response.data)
     }
 })
 
