@@ -38,8 +38,9 @@ function authIg() {
 
 }
 
-async function pushParams(query) {
-    try{
+pushParams = async (query)=> {
+
+
     console.log("QUERY IN PUSH", query)
 
     let params = {
@@ -55,15 +56,17 @@ async function pushParams(query) {
     console.log(searchParams)
 
     let url = "/api/insta"
+    try{
     let response = await fetch(url, {
         method: "POST",
         body: searchParams
     })
 
-    res.json(response)
-} catch (err){
-    res.status(500).json(err.response.data)
-}  
+    const data = await response.json();
+        return data;
+    } catch (e) {
+        return e;
+    }    
     
 }
 
