@@ -38,9 +38,12 @@ function authIg() {
 
 }
 
-function other(query){
-fetch("/api/insta", {
+other = async(query)=>{
+return await fetch("/api/insta", {
     method: "POST",
+    headers: {
+    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    },
     body: {
     code: query,
     redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
