@@ -47,7 +47,7 @@ function authIg() {
 
 }
 
-function other(){
+function other(query){
 fetch("https://stark-chamber-84959.herokuapp.com/", {
     code: query,
     redirect_uri,
