@@ -16,7 +16,7 @@ console.log("code outside")
 // }
 
 router.post('/api/insta', async (req, res) => {
-        
+        let accessToken = null;
 
     let form = `client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=${req.body.redirect_uri}&code=${req.body.code}`
     
@@ -32,8 +32,8 @@ router.post('/api/insta', async (req, res) => {
         })
         const data = await response.json();
 
-        console.log(data)
-        
+        accessToken = JSON.parse(data.access_token)
+        console.log("ACCCCCESSSSS TOKENNNNNN",accessToken)
     } catch (err){
 
         console.log("ERROR HAPPENS HERE", err);
