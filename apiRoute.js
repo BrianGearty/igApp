@@ -34,7 +34,7 @@ router.post('/api/insta', async (req, res) => {
         });
 
         console.log("RESPONSE FROM INSTAGRAM RESULT", result)
-        accessToken = res.json(result)
+        res.json(result)
         //res.send(accessToken)
 
         console.log("ERROR HAPPENS HERE", e);
