@@ -38,16 +38,18 @@ function authIg() {
 
 }
 
-    let params = {
-        redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
-        code: splitQuery
-    }
+    // let params = {
+    //     redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
+    //     code: splitQuery
+    // }
 
-    const searchParams = Object.keys(params).map((key) => {
-        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-    }).join('&');
+    // const searchParams = Object.keys(params).map((key) => {
+    //     return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+    // }).join('&');
 
 other = (query) => {
+
+    const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
 
     fetch("/api/insta", {
