@@ -32,7 +32,7 @@ router.post('/api/insta', async (req, res) => {
         })
         const data = await response.json();
 
-        accessToken = JSON.parse(data.access_token)
+        accessToken = data.access_token;
         console.log("ACCCCCESSSSS TOKENNNNNN",accessToken)
     } catch (err){
 
