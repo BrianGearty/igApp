@@ -46,7 +46,7 @@ async function getUser(accessToken){
     console.log("HIT GET USER WITH TOKEN", accessToken)
 
     try{
-    const response = await fetch(`https://graph.instagram.com/me/media?fields=id,username&access_token=${accessToken}`)
+    const response = await fetch(`https://api.instagram.com/v1/users/self/media/recent/?access_token=${accessToken}`)
     const data = await response.json();
     console.log("USERR", data)
 
