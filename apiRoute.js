@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import fetch from "node-fetch"
+const fetch = require("node-fetch")
 
 let code;
 let redirect_uri;
