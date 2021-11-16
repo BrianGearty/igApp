@@ -34,6 +34,7 @@ router.post('/api/insta', async (req, res) => {
 
         accessToken = data.access_token;
         console.log("ACCCCCESSSSS TOKENNNNNN",accessToken)
+        localStorage.setItem("accessToken", JSON.stringify(accessToken))
     } catch (err){
 
         console.log("ERROR HAPPENS HERE", err);
