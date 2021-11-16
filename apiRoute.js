@@ -19,7 +19,7 @@ router.post('/api/insta', async (req, res) => {
     let accessToken = null;
     
         console.log("WE BE GETTING PLACES")
-
+    try{
         //send form based request to Instagram API
         const result = await request.post({
             url: 'https://api.instagram.com/oauth/access_token',
@@ -36,9 +36,11 @@ router.post('/api/insta', async (req, res) => {
         console.log("RESPONSE FROM INSTAGRAM RESULT", result)
         res.json(result)
         //res.send(accessToken)
+    } catch (err){
 
-        console.log("ERROR HAPPENS HERE", e);
-        res.status(500).json(e.response.data)
+        console.log("ERROR HAPPENS HERE", err);
+        res.status(500).json(err.response.data)
+    }
 })
 
 
