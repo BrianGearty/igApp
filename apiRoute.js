@@ -50,21 +50,41 @@ async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
 
     try{
-    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,username,media&access_token=${userInfo.accessToken}`)
+    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,username,media_url,thumbnail_url&access_token=${userInfo.accessToken}`)
     const data = await response.json();
     console.log("USERR", JSON.stringify(data.media.data))
 
     let user = {
         id: data.id,
         username: data.username,
-        accessToken: userInfo.accessToken
+        accessToken: userInfo.accessToken,
+        media: data.media.data
     }
 
-
+    getMedia(user)
+    
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
         
     }
+}
+
+async function getMedia(user){
+
+    try{
+        const response = await fetch(`https://graph.instagram.com/${user.media[1]}?fields=id,username,media_type&access_token=${user.accessToken}`)
+        const data = await response.json();
+        console.log("USERR", JSON.stringify(data))
+    
+    
+    
+    
+        
+        } catch (err){
+            console.log("ERROR IN GET MEDIAAAAA", err)
+            
+        }
+
 }
 
 
