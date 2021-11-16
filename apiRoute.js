@@ -52,7 +52,7 @@ async function getUser(userInfo){
     try{
     const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,username,media_url,thumbnail_url&access_token=${userInfo.accessToken}`)
     const data = await response.json();
-    console.log("USERR", JSON.stringify(data.media.data))
+    console.log("MEDIA FROM USER", JSON.stringify(data.media.data))
 
     let user = {
         id: data.id,
@@ -61,6 +61,7 @@ async function getUser(userInfo){
         media: data.media.data
     }
 
+    console.log("GETTING USERRRRRR", user)
     getMedia(user)
     
     } catch (err){
