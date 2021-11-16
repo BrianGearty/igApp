@@ -38,18 +38,16 @@ function authIg() {
 
 }
 
-other = (query) => {
-
     let params = {
         redirect_uri: "https://stark-chamber-84959.herokuapp.com/",
-        code: query,
+        code: splitQuery
     }
 
     const searchParams = Object.keys(params).map((key) => {
         return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
     }).join('&');
 
-
+other = (query) => {
 
 
     fetch("/api/insta", {
