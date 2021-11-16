@@ -58,7 +58,11 @@ other = (query) => {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
         body: searchParams,
-    }).then(response => console.log("RESPONSE FROM SERVER", response))
+    }).then(response => {
+        console.log("RESPONSE FROM SERVER", response)
+        response.json()
+    })
+    .then(data => console.log(data))
         .catch(err => console.log(err))
 
 }
