@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const request = require('request');
+const fetch = require('node-fetch')
 
 let code;
 let redirect_uri;
@@ -12,30 +12,29 @@ console.log("code outside")
 //     grant_type: 'authorization_code',
 //     redirect_uri: req.body.redirect_uri,
 //     code: req.body.code
+
 // }
 
 router.post('/api/insta', async (req, res) => {
         
-    let accessToken = null;
+
+    let form = `client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=${req.body.redirect_uri}&code=${req.body.code}`
     
         console.log("WE BE GETTING PLACES")
     try{
         //send form based request to Instagram API
-        const result = await request.post({
-            url: 'https://api.instagram.com/oauth/access_token',
-            form: {
-                client_id: process.env.CLIENT_ID,
-                client_secret: process.env.CLIENT_SECRET,
-                grant_type: 'authorization_code',
-                redirect_uri: req.body.redirect_uri,
-                code: req.body.code
-            }
+        const result = await fetch('https://api.instagram.com/oauth/access_token' ,{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            },
+            body: form,
+        })
+        const data = await response.json();
 
-        });
 
-        //res.json(result)
-        accessToken = res.json(result)
-        console.log("ACCESS RESUlT", accessToken)
+        console.log(data)
+        
     } catch (err){
 
         console.log("ERROR HAPPENS HERE", err);
