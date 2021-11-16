@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const fetch = require('node-fetch')
+import fetch from "node-fetch"
 
 let code;
 let redirect_uri;
@@ -31,7 +31,6 @@ router.post('/api/insta', async (req, res) => {
             body: form,
         })
         const data = await response.json();
-
 
         console.log(data)
         
