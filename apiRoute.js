@@ -23,7 +23,7 @@ router.post('/api/insta', async (req, res) => {
         console.log("WE BE GETTING PLACES")
     try{
         //send form based request to Instagram API
-        const result = await fetch('https://api.instagram.com/oauth/access_token' ,{
+        const response = await fetch('https://api.instagram.com/oauth/access_token' ,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
