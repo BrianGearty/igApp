@@ -34,13 +34,27 @@ router.post('/api/insta', async (req, res) => {
 
         accessToken = data.access_token;
         console.log("ACCCCCESSSSS TOKENNNNNN",accessToken)
-        localStorage.setItem("accessToken", JSON.stringify(accessToken))
+        getUser(accessToken)
     } catch (err){
 
         console.log("ERROR HAPPENS HERE", err);
         res.status(500).json(err.response.data)
     }
 })
+
+function getUser(accessToken){
+    console.log("HIT GET USER WITH TOKEN", accessToken)
+
+    try{
+    const response = fetch(`https://graph.instagram.com/me/media?fields=id,username&access_token=${accessToken}`)
+    const data = await response.json();
+    console.log("USERR", data)
+
+    } catch (err){
+        console.log("ERROR IN GET USERRRRRR", err)
+        
+    }
+}
 
 
 module.exports = router;
