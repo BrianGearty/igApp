@@ -1,28 +1,12 @@
 const router = require("express").Router();
 const fetch = require("node-fetch")
 
-let code;
-let redirect_uri;
-
-console.log("code outside")
-
-// let form = {
-//     client_id: process.env.CLIENT_ID,
-//     client_secret: process.env.CLIENT_SECRET,
-//     grant_type: 'authorization_code',
-//     redirect_uri: req.body.redirect_uri,
-//     code: req.body.code
-
-// }
 
 router.post('/api/insta', async (req, res) => {
-        let accessToken = null;
 
     let form = `client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=${req.body.redirect_uri}&code=${req.body.code}`
     
-        console.log("WE BE GETTING PLACES")
     try{
-        //send form based request to Instagram API
         const response = await fetch('https://api.instagram.com/oauth/access_token' ,{
             method: "POST",
             headers: {
@@ -50,7 +34,7 @@ async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
 
     try{
-    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,username,media_url,thumbnail_url&access_token=${userInfo.accessToken}`)
+    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,usernamethumbnail_url&access_token=${userInfo.accessToken}`)
     const data = await response.json();
     console.log("MEDIA FROM USER", JSON.stringify(data.media.data))
 
@@ -58,7 +42,6 @@ async function getUser(userInfo){
         id: data.id,
         username: data.username,
         accessToken: userInfo.accessToken,
-        media: data.media.data
     }
 
     console.log("GETTING USERRRRRR", user)
