@@ -32,9 +32,13 @@ router.post('/api/insta', async (req, res) => {
         })
         const data = await response.json();
 
-        accessToken = data.access_token;
-        console.log("ACCCCCESSSSS TOKENNNNNN",accessToken)
-        getUser(accessToken)
+
+        let userInfo = {
+            accessToken: data.access_token,
+            userId: data.user_id
+        }
+        console.log("ACCCCCESSSSS TOKENNNNNN",userInfo)
+        getUser(userInfo)
     } catch (err){
 
         console.log("ERROR HAPPENS HERE", err);
@@ -42,11 +46,11 @@ router.post('/api/insta', async (req, res) => {
     }
 })
 
-async function getUser(accessToken){
-    console.log("HIT GET USER WITH TOKEN", accessToken)
+async function getUser(userInfo){
+    console.log("HIT GET USER WITH TOKEN", userInfo)
 
     try{
-    const response = await fetch(`https://api.instagram.com/v1/users/self/media/recent/?access_token=${accessToken}`)
+    const response = await fetch(`https://graph.instagram.com/v12.0/${userinfo.user_id}?fields=id,username&access_token=${userInfo.accessToken}`)
     const data = await response.json();
     console.log("USERR", data)
 
