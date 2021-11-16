@@ -50,7 +50,7 @@ async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
 
     try{
-    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.user_id}?fields=id,username&access_token=${userInfo.accessToken}`)
+    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}?fields=id,username&access_token=${userInfo.accessToken}`)
     const data = await response.json();
     console.log("USERR", data)
 
