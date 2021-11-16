@@ -1,6 +1,7 @@
 const express = require('express');
 require("dotenv").config();
 const apiRoute = require("./apiRoute.js");
+const path = require("path")
 
 
 // Initialize the app and create a port
