@@ -44,7 +44,7 @@ async function getUser(userInfo){
     //console.log("MEDIA FROM USER", data.data[1].id)
         console.log("MEDIAAAA", data)
 
-        let instaPhotos = data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
+        let instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
 
         console.log("INSTA PHOTOS", instaPhotos)
 
