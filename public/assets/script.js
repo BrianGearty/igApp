@@ -62,11 +62,16 @@ getPhotos = () => {
 
         for(var i = 0; i < data[0].length; i++){
 
+            let card = document.createElement("div").setAttribute("class", "card")
+            let cardBody = document.createElement("div").setAttribute("class", "card-body")
+
         let imageTag = document.createElement("img");
         imageTag.setAttribute("src", data[0][i])
         imageTag.setAttribute("width", "50%")
 
-        igFeedDiv.append(imageTag)
+        cardBody.append(imageTag)
+        card.append(cardBody)
+        igFeedDiv.append(card)
         }
 
 
