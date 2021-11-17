@@ -106,16 +106,16 @@ getPhotos = () => {
 
                     console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
 
-                    // for (var i = 0; i < instaStuff.children.data.length; i++) {
+                    for (var i = 0; i < instaStuff.children.data.length; i++) {
 
 
                         let carouselImg = document.createElement("img")
                         carouselImg.setAttribute("class", "d-block w-100")
                         carouselImg.setAttribute("src", instaStuff.children.data[i].media_url)
 
-                        carouselItem.append(carouselImg)
-
-                    // }
+                        // carouselItem.append(carouselImg)
+                        console.log("CAROUSEL IMAGE", carouselImg)
+                    }
 
                     let carousel = document.createElement("div")
                     carousel.setAttribute("class", "carousel slide")
@@ -126,8 +126,8 @@ getPhotos = () => {
 
 
 
-                    carouselInner.append(carouselItem)
-                    carousel.append(carouselInner)
+                    // carouselInner.append(carouselItem)
+                    // carousel.append(carouselInner)
 
                     console.log(carousel)
                 } else {
