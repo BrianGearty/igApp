@@ -118,7 +118,7 @@ getPhotos = () => {
                 
                     
                     
-                    // carousel.append(carouselInner)
+                    carousel.append(carouselInner)
                     // carouselInner.append(carouselItem)
                     // carouselItem.append(carouselImg)
 
