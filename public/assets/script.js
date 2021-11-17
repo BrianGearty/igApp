@@ -74,11 +74,11 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
-            console.log("CAROUSEL FROM /API/INSTA", data.carousel[0])
+            console.log("CAROUSEL FROM /API/INSTA", data)
 
-            console.log("PHOTOS FROM /API/INSTA", data.photos[0])
+            // console.log("PHOTOS FROM /API/INSTA", data.photos[0])
 
-            console.log("VIDEOS FROM /API/INSTA", data.videos[0])
+            // console.log("VIDEOS FROM /API/INSTA", data.videos[0])
 
               // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
         // photos.push(instaPhotos)
