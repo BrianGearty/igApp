@@ -18,7 +18,7 @@ getURL();
 
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
-    other(splitQuery)
+    //other(splitQuery)
 
     notification.removeAttribute("class")
 
@@ -32,6 +32,11 @@ authIgBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
     console.log("clicked")
+    if(!splitQuery){
+        return;
+    } else {
+        other(splitQuery)
+    }
 
 })
 
@@ -51,7 +56,7 @@ authIg = () => {
 
 other = (query) => {
 
-    const searchParams =`redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
+    const searchParams = `redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
     fetch("/api/insta", {
         method: "POST",
@@ -65,30 +70,30 @@ other = (query) => {
 getPhotos = () => {
 
     fetch("/api/insta")
-    .then(response => response.json())
-    .then(data =>{
-        console.log("DATA FROM /API/INSTA", data)
+        .then(response => response.json())
+        .then(data => {
+            console.log("DATA FROM /API/INSTA", data)
 
-        for(var i = 0; i < data[0].length; i++){
+            for (var i = 0; i < data[0].length; i++) {
 
-            let card = document.createElement("div")
-            card.setAttribute("class", "card")
-            let cardBody = document.createElement("div")
-            cardBody.setAttribute("class", "card-body")
+                let card = document.createElement("div")
+                card.setAttribute("class", "card")
+                let cardBody = document.createElement("div")
+                cardBody.setAttribute("class", "card-body")
 
-        let imageTag = document.createElement("img");
-        imageTag.setAttribute("src", data[0][i])
-        imageTag.setAttribute("width", "50%")
-        imageTag.setAttribute("class", "igIMG")
-        
-
-        cardBody.append(imageTag)
-        card.append(cardBody)
-        igFeedDiv.append(card)
-        }
+                let imageTag = document.createElement("img");
+                imageTag.setAttribute("src", data[0][i])
+                imageTag.setAttribute("width", "50%")
+                imageTag.setAttribute("class", "igIMG")
 
 
-    })
+                cardBody.append(imageTag)
+                card.append(cardBody)
+                igFeedDiv.append(card)
+            }
+
+
+        })
 
 
 }
