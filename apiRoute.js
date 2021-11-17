@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const fetch = require("node-fetch")
 
+let instaPhotos;
+
 // getting auth code from front end
 router.post('/api/insta', async (req, res) => {
     // passing our auth code and putting it in x-ww-form-urlencoded format
@@ -44,41 +46,19 @@ async function getUser(userInfo){
     //console.log("MEDIA FROM USER", data.data[1].id)
         console.log("MEDIAAAA", data)
 
-        let instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
+        instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
 
         console.log("INSTA PHOTOS", instaPhotos)
 
-    // let userMedia = {
-    //     id: data.data[1].id,
-    //     accessToken: userInfo.accessToken,
-    // }
-
-    // console.log("GETTING USERRRRRR", user)
-    //getMedia(userMedia)
-    
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
         
     }
 }
 
-// async function getMedia(userMedia){
+console.log("INSTA PHOTOS OUTSIDE", instaPhotos)
 
-//     try{
-//         const response = await fetch(`https://graph.instagram.com/${userMedia.id}?fields=id,username,media_type&access_token=${userMedia.accessToken}`)
-//         const data = await response.json();
-//         console.log("MEDIAAAAAA", JSON.stringify(data))
-    
-    
-    
-    
-        
-//         } catch (err){
-//             console.log("ERROR IN GET MEDIAAAAA", err)
-            
-//         }
 
-// }
 
 
 module.exports = router;
