@@ -1,6 +1,7 @@
 let igUsernameInput = document.getElementById("username");
 const authIgBtn = document.getElementById("authBtn");
 const igConnectBtn = document.getElementById("connectBtn")
+const getPhotoBtn = document.getElementById("photoBtn")
 
 let splitQuery;
 
@@ -24,7 +25,13 @@ authIgBtn.addEventListener("click", function () {
 
 })
 
-function authIg() {
+getPhotoBtn.addEventListener("click", function () {
+    //let username = igUsernameInput.value.trim();
+    getPhotos();
+
+})
+
+authIg = () => {
     let appId = "215321604061729";
     // let redUri = window.location.origin + "/igApp";
     let redUri = "https://stark-chamber-84959.herokuapp.com/"
@@ -44,3 +51,14 @@ other = (query) => {
         body: searchParams,
     })
 };
+
+getPhotos = () => {
+
+    fetch("/api/insta")
+    .then(response => response.json())
+    .then(data =>{
+        console.log("DATA FROM /API/INSTA", data)
+    })
+
+
+}

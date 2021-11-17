@@ -59,8 +59,8 @@ async function getUser(userInfo){
 }
 
 router.get("/api/insta", (req, res)=>{
-    console.log("PHOTOS IN /API/INSTA",photos)
-
+    res.send(photos)
+console.log("hit get back end call")
 
 })
 
