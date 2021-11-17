@@ -6,3 +6,7 @@
 .igIMG {
     border: black solid 2px;
 }
+
+.hide{
+    display: none;
+}

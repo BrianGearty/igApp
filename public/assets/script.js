@@ -3,6 +3,9 @@ const authIgBtn = document.getElementById("authBtn");
 const igConnectBtn = document.getElementById("connectBtn")
 const getPhotoBtn = document.getElementById("photoBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
+const notification = document.getElementById("notification")
+
+
 
 let splitQuery;
 
@@ -16,6 +19,12 @@ getURL();
 igConnectBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     other(splitQuery)
+
+    notification.removeAttribute("class")
+
+    setTimeout(function () {
+        notification.setAttribute("class", "hide");
+    }, 3000);
 
 })
 
