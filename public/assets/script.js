@@ -94,19 +94,23 @@ getPhotos = () => {
                 if (instaStuff.media_type === "IMAGE") {
 
                     let imageTag = document.createElement("img");
-                    imageTag.setAttribute("src", data[0][i])
+                    imageTag.setAttribute("src", instaStuff.media_url)
                     imageTag.setAttribute("width", "50%")
-                    imageTag.setAttribute("class", "igIMG")
+                    imageTag.setAttribute("class", "igIMG card-img-top")
 
+                    let imageCaption = document.createElement("h4")
+                    imageCaption.setAttribute("class","card-text")
+                    imageCaption.textContent = instaStuff.caption
 
-                    cardBody.append(imageTag)
+                    card.append(imageTag)
+                    cardBody.append(imageCaption)
                     card.append(cardBody)
                     igFeedDiv.append(card)
 
 
                 } else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
 
-                    
+
 
                 } else {
 
