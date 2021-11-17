@@ -2,6 +2,7 @@ let igUsernameInput = document.getElementById("username");
 const authIgBtn = document.getElementById("authBtn");
 const igConnectBtn = document.getElementById("connectBtn")
 const getPhotoBtn = document.getElementById("photoBtn")
+const igFeedDiv = document.getElementById("instagramFeed")
 
 let splitQuery;
 
@@ -58,6 +59,17 @@ getPhotos = () => {
     .then(response => response.json())
     .then(data =>{
         console.log("DATA FROM /API/INSTA", data)
+
+        for(var i = 0; i < data.length; i++){
+
+        let imageTag = document.createElement("img");
+        imageTag.setAttribute("src", data[i])
+        imageTag.setAttribute("width", "50%")
+
+        igFeedDiv.append(imageTag)
+        }
+
+
     })
 
 
