@@ -35,6 +35,7 @@ router.post('/api/insta', async (req, res) => {
     }
 })
 
+router.get('/api/insta', (req, res)=>{
 // here we call instagrams end point to get user info
 async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
@@ -55,8 +56,8 @@ async function getUser(userInfo){
         
     }
 }
+})
 
-console.log("INSTA PHOTOS OUTSIDE", instaPhotos)
 
 
 
