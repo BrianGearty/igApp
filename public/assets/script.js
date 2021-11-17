@@ -3,7 +3,10 @@ const authIgBtn = document.getElementById("authBtn");
 const getPhotoBtn = document.getElementById("photoBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
-let allIgdata = []
+
+let photos = []
+let videos = []
+let carousel = []
 
 
 
@@ -77,7 +80,13 @@ getPhotos = () => {
 
             console.log("VIDEOS FROM /API/INSTA", data.videos[0])
 
-            // allIgdata.push({})
+              // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
+        // photos.push(instaPhotos)
+
+        // instaCarousel = data.data.filter(d => d.media_type === "CAROUSEL_ALBUM").map(d => d.media_url, d.caption);
+        // carousel.push(instaCarousel)
+        // instaVid = data.data.filter(d => d.media_type === "VIDEO").map(d => d.media_url, d.caption);
+        // videos.push(instaVid)
 
 
 
