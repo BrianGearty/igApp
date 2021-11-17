@@ -32,13 +32,6 @@ authIgBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
     console.log("clicked")
-    if(!splitQuery){
-        console.log("no splitquery")
-        return;
-    } else {
-        console.log("splitquery")
-        other(splitQuery)
-    }
 
 })
 
@@ -54,6 +47,16 @@ authIg = () => {
     let redUri = "https://stark-chamber-84959.herokuapp.com/"
     let url = `https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redUri}&scope=user_profile,user_media&response_type=code`;
     window.open(url, "_self").focus();
+}
+
+if(!splitQuery){
+    console.log("no splitquery")
+} else if(splitQuery === "undefined"){
+    console.log("splitquery undefined")
+}
+else {
+    console.log("splitquery")
+    other(splitQuery)
 }
 
 other = (query) => {
