@@ -44,6 +44,10 @@ async function getUser(userInfo){
     //console.log("MEDIA FROM USER", data.data[1].id)
         console.log("MEDIAAAA", data)
 
+        let instaPhotos = data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
+
+        console.log("INSTA PHOTOS", instaPhotos)
+
     // let userMedia = {
     //     id: data.data[1].id,
     //     accessToken: userInfo.accessToken,
@@ -58,23 +62,23 @@ async function getUser(userInfo){
     }
 }
 
-async function getMedia(userMedia){
+// async function getMedia(userMedia){
 
-    try{
-        const response = await fetch(`https://graph.instagram.com/${userMedia.id}?fields=id,username,media_type&access_token=${userMedia.accessToken}`)
-        const data = await response.json();
-        console.log("MEDIAAAAAA", JSON.stringify(data))
+//     try{
+//         const response = await fetch(`https://graph.instagram.com/${userMedia.id}?fields=id,username,media_type&access_token=${userMedia.accessToken}`)
+//         const data = await response.json();
+//         console.log("MEDIAAAAAA", JSON.stringify(data))
     
     
     
     
         
-        } catch (err){
-            console.log("ERROR IN GET MEDIAAAAA", err)
+//         } catch (err){
+//             console.log("ERROR IN GET MEDIAAAAA", err)
             
-        }
+//         }
 
-}
+// }
 
 
 module.exports = router;
