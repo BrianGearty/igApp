@@ -103,7 +103,9 @@ getPhotos = () => {
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
                     let carouselItem = document.createElement("div")
 
-                    for (var i = 0; i < instaStuff.children.data.length; i++) {
+                    console.log(instaStuff.children.data)
+
+                    // for (var i = 0; i < instaStuff.children.data.length; i++) {
 
                         carouselItem.setAttribute("class", "carousel-item")
 
@@ -113,7 +115,7 @@ getPhotos = () => {
 
                         carouselItem.append(carouselImg)
 
-                    }
+                    // }
 
                     let carousel = document.createElement("div")
                     carousel.setAttribute("class", "carousel slide")
