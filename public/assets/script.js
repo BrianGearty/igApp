@@ -127,7 +127,8 @@ getPhotos = () => {
 
                 }
 
-                // card.append(carousel)
+
+                card.append(carousel)
                 igFeedDiv.append(card)
 
                 // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
