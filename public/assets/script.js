@@ -102,6 +102,19 @@ getPhotos = () => {
                     
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
 
+                    for(var i = 0; i < instaStuff.children.data.length; i++){
+
+                        let carouselItem = document.createElement("div")
+                        carouselItem.setAttribute("class", "carousel-item")
+    
+                        let carouselImg = document.createElement("img")
+                        carouselImg.setAttribute("class", "d-block w-100")
+                        carouselImg.setAttribute("src", instaStuff.children.data[i].media_url)
+
+                        carouselItem.append(carouselImg)
+
+                    }
+
                     let carousel = document.createElement("div")
                     carousel.setAttribute("class", "carousel slide")
                     carousel.setAttribute("data-ride", "carousel")
@@ -109,18 +122,10 @@ getPhotos = () => {
                     let carouselInner = document.createElement("div")
                     carouselInner.setAttribute("class", "carousel-inner")
 
-                    // let carouselItem = document.createElement("div")
-                    // carouselItem.setAttribute("class", "carousel-item")
-
-                    // let carouselImg = document.createElement("img")
-                    // carouselImg.setAttribute("class", "d-block w-100")
-                    // carouselImg.setAttribute("src", instaStuff.media_url)
-                
                     
                     
+                    carouselInner.append(carouselItem)
                     carousel.append(carouselInner)
-                    // carouselInner.append(carouselItem)
-                    // carouselItem.append(carouselImg)
 
                     console.log(carousel)
                 } else {
