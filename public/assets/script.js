@@ -64,6 +64,7 @@ getPhotos = () => {
 
             let card = document.createElement("div")
             card.setAttribute("class", "card")
+            card.setAttribute("class", "m-3")
             let cardBody = document.createElement("div")
             cardBody.setAttribute("class", "card-body")
 
