@@ -37,19 +37,20 @@ router.post('/api/insta', async (req, res) => {
 async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
 
-                                
-    try{
-    const response = await fetch(`https://graph.instagram.com/v12.0/${userInfo.userId}/media?access_token=${userInfo.accessToken}`)
-    const data = await response.json();
-    console.log("MEDIA FROM USER", data.data[1].id)
 
-    let userMedia = {
-        id: data.data[1].id,
-        accessToken: userInfo.accessToken,
-    }
+    try{
+    const response = await fetch(`https://graph.instagram.com/me/media?fields=media_type,permalink,media_url&access_token=${userInfo.accessToken}`)
+    const data = await response.json();
+    //console.log("MEDIA FROM USER", data.data[1].id)
+        console.log("MEDIAAAA", data)
+
+    // let userMedia = {
+    //     id: data.data[1].id,
+    //     accessToken: userInfo.accessToken,
+    // }
 
     // console.log("GETTING USERRRRRR", user)
-    getMedia(userMedia)
+    //getMedia(userMedia)
     
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
