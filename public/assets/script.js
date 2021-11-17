@@ -3,6 +3,7 @@ const authIgBtn = document.getElementById("authBtn");
 const getPhotoBtn = document.getElementById("photoBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
+let allIgdata = []
 
 
 
@@ -70,14 +71,22 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
-            console.log("DATA FROM /API/INSTA", data)
+            console.log("CAROUSEL FROM /API/INSTA", data.carousel[0])
+
+            console.log("PHOTOS FROM /API/INSTA", data.photos[0])
+
+            console.log("VIDEOS FROM /API/INSTA", data.videos[0])
+
+            // allIgdata.push({})
 
 
 
 
 
 
-            // for (var i = 0; i < data[0].length; i++) {
+
+
+            // for (var i = 0; i < data.photos[0].length; i++) {
 
             //     let card = document.createElement("div")
             //     card.setAttribute("class", "card")
