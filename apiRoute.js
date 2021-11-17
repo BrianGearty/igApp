@@ -2,6 +2,8 @@ const router = require("express").Router();
 const fetch = require("node-fetch")
 
 let photos = [];
+let carousel = [];
+let videos = [];
 
 // getting auth code from front end
 router.post('/api/insta', async (req, res) => {
@@ -50,7 +52,10 @@ async function getUser(userInfo){
         instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
         photos.push(instaPhotos)
 
-        console.log("INSTA PHOTOS", instaPhotos)
+        instaCarousel = data.data.filter(d => d.media_type === "CAROUSEL_ALBUM").map(d => d.media_url);
+        carousel.push(instaCarousel)
+        instaVid = data.data.filter(d => d.media_type === "VIDEO").map(d => d.media_url);
+        videos.push(instaVid)
 
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
@@ -59,7 +64,7 @@ async function getUser(userInfo){
 }
 
 router.get("/api/insta", (req, res)=>{
-    res.send(photos)
+    res.send({photos, carousel, videos})
 console.log("hit get back end call")
 
 })

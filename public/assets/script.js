@@ -36,6 +36,7 @@ authIg = () => {
     window.open(url, "_self").focus();
 }
 
+//handling to fire off postAuthCode or not
 if(!splitQuery){
     console.log("no splitquery")
 } else if(splitQuery === "undefined"){
@@ -71,6 +72,11 @@ getPhotos = () => {
         .then(data => {
             console.log("DATA FROM /API/INSTA", data)
 
+
+
+
+
+            
             for (var i = 0; i < data[0].length; i++) {
 
                 let card = document.createElement("div")
