@@ -102,12 +102,12 @@ getPhotos = () => {
 
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
                     let carouselItem = document.createElement("div")
+                    carouselItem.setAttribute("class", "carousel-item")
 
-                    console.log(instaStuff.children.data)
+                    console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
 
                     // for (var i = 0; i < instaStuff.children.data.length; i++) {
 
-                        carouselItem.setAttribute("class", "carousel-item")
 
                         let carouselImg = document.createElement("img")
                         carouselImg.setAttribute("class", "d-block w-100")
