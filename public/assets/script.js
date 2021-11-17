@@ -56,10 +56,10 @@ if(!splitQuery){
 }
 else {
     console.log("splitquery")
-    other(splitQuery)
+    postAuthCode(splitQuery)
 }
 
-other = (query) => {
+postAuthCode = (query) => {
 
     const searchParams = `redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
