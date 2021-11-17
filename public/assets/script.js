@@ -8,8 +8,6 @@ let photos = []
 let videos = []
 let carousel = []
 
-
-
 let splitQuery;
 
 function getURL() {
@@ -76,11 +74,6 @@ getPhotos = () => {
         .then(data => {
             console.log("CAROUSEL FROM /API/INSTA", data[0].data[i])
 
-            // console.log("PHOTOS FROM /API/INSTA", data.photos[0])
-
-            // console.log("VIDEOS FROM /API/INSTA", data.videos[0])
-
-
             for (var i = 0; i < data[0].data.length; i++) {
 
                 let card = document.createElement("div")
@@ -91,7 +84,7 @@ getPhotos = () => {
                 let instaStuff = data[0].data[i];
                 console.log("iNSTA STUFF", instaStuff)
 
-                if (instaStuff.media_type === "IMAGE") {
+                if (instaStuff.media_type === "IMAGE" || instaStuff.media_type === "CAROUSEL_ALBUM") {
 
                     let imageTag = document.createElement("img");
                     imageTag.setAttribute("src", instaStuff.media_url)
@@ -105,16 +98,37 @@ getPhotos = () => {
                     card.append(imageTag)
                     cardBody.append(imageCaption)
                     card.append(cardBody)
-                    igFeedDiv.append(card)
+                    
+
+                } 
+                // else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
+
+                    // let carousel = document.createElement("div")
+                    // carousel.setAttribute("class", "carousel slide")
+                    // carousel.setAttribute("data-ride", "carousel")
+
+                    // let carouselInner = document.createElement("div")
+                    // carouselInner.setAttribute("class", "carousel-inner")
+
+                    // let carouselItem = document.createElement("div")
+                    // carouselItem.setAttribute("class", "carousel-item")
+
+                    // let carouselImg = document.createElement("img")
+                    // carouselImg.setAttribute("class", "d-block w-100")
 
 
-                } else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
+                    // carousel.append(carouselInner)
+
+                    // // for loop
+                    // carouselInner.append(carouselItem)
 
 
 
-                } else {
+                // } else {
 
-                }
+                // }
+
+                igFeedDiv.append(card)
 
                 // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
                 // photos.push(instaPhotos)
