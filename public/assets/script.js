@@ -113,11 +113,6 @@ getPhotos = () => {
                         console.log("CHILDREN DATA", img)
                         console.log("img index", i)
                         
-                        if(img.indexOf(0)){
-                            console.log("first img")
-                        } else if (img.indexOf(1)){
-                            console.log("scond image")
-                        }
 
                         carouselImg.setAttribute("class", "d-block w-100")
                         carouselImg.setAttribute("src", img.media_url)
@@ -138,9 +133,8 @@ getPhotos = () => {
 
 
 
-                    // carouselInner.append(carouselItem)
-                    // carousel.append(carouselInner)
-
+                    carouselInner.append(carouselItem)
+                    carousel.append(carouselInner)
                     console.log(carousel)
                 } else {
 
