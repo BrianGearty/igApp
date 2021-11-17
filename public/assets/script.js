@@ -106,21 +106,21 @@ getPhotos = () => {
                     carousel.setAttribute("class", "carousel slide")
                     carousel.setAttribute("data-ride", "carousel")
 
-                    let carouselInner = document.createElement("div")
-                    carouselInner.setAttribute("class", "carousel-inner")
+                    // let carouselInner = document.createElement("div")
+                    // carouselInner.setAttribute("class", "carousel-inner")
 
-                    let carouselItem = document.createElement("div")
-                    carouselItem.setAttribute("class", "carousel-item")
+                    // let carouselItem = document.createElement("div")
+                    // carouselItem.setAttribute("class", "carousel-item")
 
-                    let carouselImg = document.createElement("img")
-                    carouselImg.setAttribute("class", "d-block w-100")
-                    carouselImg.setAttribute("src", instaStuff.media_url)
+                    // let carouselImg = document.createElement("img")
+                    // carouselImg.setAttribute("class", "d-block w-100")
+                    // carouselImg.setAttribute("src", instaStuff.media_url)
                 
                     
                     
-                    carousel.append(carouselInner)
-                    carouselInner.append(carouselItem)
-                    carouselItem.append(carouselImg)
+                    // carousel.append(carouselInner)
+                    // carouselInner.append(carouselItem)
+                    // carouselItem.append(carouselImg)
 
                     console.log(carousel)
                 } else {
