@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const fetch = require("node-fetch")
 
-let instaPhotos;
+let photos = [];
 
 // getting auth code from front end
 router.post('/api/insta', async (req, res) => {
@@ -35,7 +35,7 @@ router.post('/api/insta', async (req, res) => {
     }
 })
 
-router.get('/api/insta', (req, res)=>{
+
 // here we call instagrams end point to get user info
 async function getUser(userInfo){
     console.log("HIT GET USER WITH TOKEN", userInfo)
@@ -48,6 +48,7 @@ async function getUser(userInfo){
         console.log("MEDIAAAA", data)
 
         instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url);
+        photos.push(instaPhotos)
 
         console.log("INSTA PHOTOS", instaPhotos)
 
@@ -56,7 +57,13 @@ async function getUser(userInfo){
         
     }
 }
+
+router.get("/api/insta", (req, res)=>{
+    console.log("PHOTOS IN /API/INSTA",photos)
+
+
 })
+
 
 
 
