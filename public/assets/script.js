@@ -109,7 +109,7 @@ getPhotos = () => {
                     let carouselImg = document.createElement("img")
                     // console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
 
-                    instaStuff.children.forEach(function(img, i){
+                    instaStuff.children.data.forEach(function(img, i){
                         console.log("CHILDREN DATA", img)
                         console.log(i)
 
