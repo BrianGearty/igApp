@@ -48,8 +48,8 @@ async function getUser(userInfo){
     //     accessToken: userInfo.accessToken,
     // }
 
-    console.log("GETTING USERRRRRR", user)
-    getMedia(user)
+    // console.log("GETTING USERRRRRR", user)
+    //getMedia(user)
     
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
