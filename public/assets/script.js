@@ -60,10 +60,10 @@ getPhotos = () => {
     .then(data =>{
         console.log("DATA FROM /API/INSTA", data)
 
-        for(var i = 0; i < data.length; i++){
+        for(var i = 0; i < data[0].length; i++){
 
         let imageTag = document.createElement("img");
-        imageTag.setAttribute("src", data[i])
+        imageTag.setAttribute("src", data[0][i])
         imageTag.setAttribute("width", "50%")
 
         igFeedDiv.append(imageTag)
