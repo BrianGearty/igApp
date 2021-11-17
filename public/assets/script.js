@@ -99,20 +99,22 @@ getPhotos = () => {
                     // cardBody.append(imageCaption)
                     // card.append(cardBody)
 
+                    //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39209780_441483436343962_1747052392316141568_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=qW8U_7BBLEsAX91h7sY&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=0eff034ec24a204299eda96feb5bf4dd&oe=619A0A4D"
+                    //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39926281_2134387383513684_1025651470323679232_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=YXcS5lKub7oAX9PifaM&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=894a1feeea4720d9185c9a4909963150&oe=6199CE09"
 
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
                     let carouselItem = document.createElement("div")
                     carouselItem.setAttribute("class", "carousel-item")
 
                     let carouselImg = document.createElement("img")
-                    console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
+                    // console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
 
                     instaStuff.children.data.forEach(function(img, i){
                         console.log("CHILDREN DATA IMAGE", img)
                         console.log(i)
 
                         carouselImg.setAttribute("class", "d-block w-100")
-                        carouselImg.setAttribute("src", img.media_url)
+                        carouselImg.setAttribute("src", img[i].media_url)
 
                         
                         carouselItem.append(carouselImg)
