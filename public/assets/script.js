@@ -106,7 +106,10 @@ getPhotos = () => {
 
                     console.log("INSTA STUFF.CHILDREN.DATA",instaStuff.children.data.length)
 
-                    for (var i = 0; i < instaStuff.children.data.length; i++) {
+                    instaStuff.children.data.forEach(function(img, i){
+                        console.log("CHILDREN DATA IMAGE", img)
+                        console.log(i)
+                    })
 
 
                         let carouselImg = document.createElement("img")
@@ -115,7 +118,7 @@ getPhotos = () => {
 
                         // carouselItem.append(carouselImg)
                         console.log("CAROUSEL IMAGE", carouselImg)
-                    }
+                    
 
                     let carousel = document.createElement("div")
                     carousel.setAttribute("class", "carousel slide")
