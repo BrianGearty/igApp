@@ -44,7 +44,7 @@ async function getUser(userInfo){
 
 
     try{
-    const response = await fetch(`https://graph.instagram.com/me/media?fields=media_type,permalink,media_url&access_token=${userInfo.accessToken}`)
+    const response = await fetch(`https://graph.instagram.com/me/media?fields=media_type,permalink,media_url,caption&access_token=${userInfo.accessToken}`)
     const data = await response.json();
     //console.log("MEDIA FROM USER", data.data[1].id)
         console.log("MEDIAAAA", data)
