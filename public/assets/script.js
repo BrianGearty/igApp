@@ -116,11 +116,11 @@ getPhotos = () => {
                     carouselImg.setAttribute("class", "d-block w-100")
                     carouselImg.setAttribute("src", instaStuff.media_url)
                 
-                    carouselItem.append(carouselImg)
-
-                    carouselInner.append(carouselItem)
-
+                    
+                    
                     carousel.append(carouselInner)
+                    carouselInner.append(carouselItem)
+                    carouselItem.append(carouselImg)
 
                     console.log(carousel)
                 } else {
