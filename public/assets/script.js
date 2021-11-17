@@ -111,13 +111,19 @@ getPhotos = () => {
 
                     instaStuff.children.data.forEach(function(img, i){
                         console.log("CHILDREN DATA", img)
-                        console.log(i)
+                        console.log("img index", i)
+                        
+                        if(img.indexOf(0)){
+                            console.log("first img")
+                        } else if (img.indexOf(1)){
+                            console.log("scond image")
+                        }
 
                         carouselImg.setAttribute("class", "d-block w-100")
                         carouselImg.setAttribute("src", img.media_url)
 
                         
-                        carouselItem.append(img)
+                        carouselItem.append(carouselImg)
 
                         console.log("CAROUSEL Item", carouselItem)
                     })
