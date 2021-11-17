@@ -1,6 +1,8 @@
 .card {
     margin: 25px !important;
-    border: black solid 2px;
     
+}
 
+.card-body {
+    border: black solid 2px;
 }
