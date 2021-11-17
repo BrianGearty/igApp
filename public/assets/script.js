@@ -115,21 +115,17 @@ getPhotos = () => {
                     let carouselImg = document.createElement("img")
                     carouselImg.setAttribute("class", "d-block w-100")
                     carouselImg.setAttribute("src", instaStuff.media_url)
-
-                    carousel.append(carouselInner)
+                
+                    carouselItem.append(carouselImg)
 
                     carouselInner.append(carouselItem)
 
-                    carouselItem.append(carouselImg)
-
-
-
-
+                    carousel.append(carouselInner)
                 } else {
 
                 }
 
-                igFeedDiv.append(card)
+                igFeedDiv.append(card, carousel)
 
                 // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
                 // photos.push(instaPhotos)
