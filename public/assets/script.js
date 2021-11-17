@@ -99,14 +99,14 @@ getPhotos = () => {
                     // cardBody.append(imageCaption)
                     // card.append(cardBody)
 
-                    
+
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
+                    let carouselItem = document.createElement("div")
 
-                    for(var i = 0; i < instaStuff.children.data.length; i++){
+                    for (var i = 0; i < instaStuff.children.data.length; i++) {
 
-                        let carouselItem = document.createElement("div")
                         carouselItem.setAttribute("class", "carousel-item")
-    
+
                         let carouselImg = document.createElement("img")
                         carouselImg.setAttribute("class", "d-block w-100")
                         carouselImg.setAttribute("src", instaStuff.children.data[i].media_url)
@@ -122,8 +122,8 @@ getPhotos = () => {
                     let carouselInner = document.createElement("div")
                     carouselInner.setAttribute("class", "carousel-inner")
 
-                    
-                    
+
+
                     carouselInner.append(carouselItem)
                     carousel.append(carouselInner)
 
