@@ -43,14 +43,13 @@ async function getUser(userInfo){
     const data = await response.json();
     console.log("MEDIA FROM USER", data.data[1].id)
 
-    // let user = {
-    //     id: data.id,
-    //     username: data.username,
-    //     accessToken: userInfo.accessToken,
-    // }
+    let userMedia = {
+        id: data.data[1].id,
+        accessToken: userInfo.accessToken,
+    }
 
     // console.log("GETTING USERRRRRR", user)
-    //getMedia(user)
+    getMedia(userMedia)
     
     } catch (err){
         console.log("ERROR IN GET USERRRRRR", err)
@@ -58,10 +57,10 @@ async function getUser(userInfo){
     }
 }
 
-async function getMedia(user){
+async function getMedia(userMedia){
 
     try{
-        const response = await fetch(`https://graph.instagram.com/${user.media[1]}?fields=id,username,media_type&access_token=${user.accessToken}`)
+        const response = await fetch(`https://graph.instagram.com/${userMedia.id}?fields=id,username,media_type&access_token=${userMedia.accessToken}`)
         const data = await response.json();
         console.log("MEDIAAAAAA", JSON.stringify(data))
     
