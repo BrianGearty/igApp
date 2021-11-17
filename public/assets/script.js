@@ -106,8 +106,8 @@ getPhotos = () => {
                     carousel.setAttribute("class", "carousel slide")
                     carousel.setAttribute("data-ride", "carousel")
 
-                    // let carouselInner = document.createElement("div")
-                    // carouselInner.setAttribute("class", "carousel-inner")
+                    let carouselInner = document.createElement("div")
+                    carouselInner.setAttribute("class", "carousel-inner")
 
                     // let carouselItem = document.createElement("div")
                     // carouselItem.setAttribute("class", "carousel-item")
