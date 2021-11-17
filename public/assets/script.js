@@ -41,9 +41,9 @@ authIg = () => {
 }
 
 //handling to fire off postAuthCode or not
-if(!splitQuery){
+if (!splitQuery) {
     console.log("no splitquery")
-} else if(splitQuery === "undefined"){
+} else if (splitQuery === "undefined") {
     console.log("splitquery undefined")
 }
 else {
@@ -56,7 +56,7 @@ else {
     postAuthCode(splitQuery)
 }
 
-function postAuthCode(query){
+function postAuthCode(query) {
 
     const searchParams = `redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
@@ -83,45 +83,47 @@ getPhotos = () => {
 
             for (var i = 0; i < data[0].data.length; i++) {
 
+                let card = document.createElement("div")
+                card.setAttribute("class", "card")
+                let cardBody = document.createElement("div")
+                cardBody.setAttribute("class", "card-body")
+
                 let instaStuff = data[0].data[i];
                 console.log("iNSTA STUFF", instaStuff)
 
-        // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
-        // photos.push(instaPhotos)
+                if (instaStuff.media_type === "IMAGE") {
 
-        // instaCarousel = data.data.filter(d => d.media_type === "CAROUSEL_ALBUM").map(d => d.media_url, d.caption);
-        // carousel.push(instaCarousel)
-        // instaVid = data.data.filter(d => d.media_type === "VIDEO").map(d => d.media_url, d.caption);
-        // videos.push(instaVid)
+                    let imageTag = document.createElement("img");
+                    imageTag.setAttribute("src", data[0][i])
+                    imageTag.setAttribute("width", "50%")
+                    imageTag.setAttribute("class", "igIMG")
 
-                
-                
+
+                    cardBody.append(imageTag)
+                    card.append(cardBody)
+                    igFeedDiv.append(card)
+
+
+                } else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
+
+                    
+
+                } else {
+
+                }
+
+                // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
+                // photos.push(instaPhotos)
+
+                // instaCarousel = data.data.filter(d => d.media_type === "CAROUSEL_ALBUM").map(d => d.media_url, d.caption);
+                // carousel.push(instaCarousel)
+                // instaVid = data.data.filter(d => d.media_type === "VIDEO").map(d => d.media_url, d.caption);
+                // videos.push(instaVid)
+
+
+
 
             }
-
-
-
-
-
-
-            // for (var i = 0; i < data.photos[0].length; i++) {
-
-            //     let card = document.createElement("div")
-            //     card.setAttribute("class", "card")
-            //     let cardBody = document.createElement("div")
-            //     cardBody.setAttribute("class", "card-body")
-
-            //     let imageTag = document.createElement("img");
-            //     imageTag.setAttribute("src", data[0][i])
-            //     imageTag.setAttribute("width", "50%")
-            //     imageTag.setAttribute("class", "igIMG")
-
-
-            //     cardBody.append(imageTag)
-            //     card.append(cardBody)
-            //     igFeedDiv.append(card)
-            // }
-
 
         })
 
