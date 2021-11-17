@@ -70,6 +70,7 @@ getPhotos = () => {
         let imageTag = document.createElement("img");
         imageTag.setAttribute("src", data[0][i])
         imageTag.setAttribute("width", "50%")
+        imageTag.setAttribute("class", "igIMG")
         
 
         cardBody.append(imageTag)
