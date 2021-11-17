@@ -33,8 +33,10 @@ authIgBtn.addEventListener("click", function () {
     authIg()
     console.log("clicked")
     if(!splitQuery){
+        console.log("no splitquery")
         return;
     } else {
+        console.log("splitquery")
         other(splitQuery)
     }
 
