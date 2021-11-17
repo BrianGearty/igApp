@@ -113,13 +113,13 @@ getPhotos = () => {
                         console.log("CHILDREN DATA", img)
                         console.log(i)
 
-                        // carouselImg.setAttribute("class", "d-block w-100")
-                        // carouselImg.setAttribute("src", img[i].media_url)
+                        carouselImg.setAttribute("class", "d-block w-100")
+                        carouselImg.setAttribute("src", img.media_url)
 
                         
-                        // carouselItem.append(carouselImg)
+                        carouselItem.append(img)
 
-                        // console.log("CAROUSEL Item", carouselItem)
+                        console.log("CAROUSEL Item", carouselItem)
                     })
                     
 
