@@ -116,8 +116,9 @@ getPhotos = () => {
 
                         
                         carouselItem.append(carouselImg)
-                    })
+
                         console.log("CAROUSEL Item", carouselItem)
+                    })
                     
 
                     let carousel = document.createElement("div")
