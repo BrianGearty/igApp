@@ -121,6 +121,8 @@ getPhotos = () => {
                     carouselInner.append(carouselItem)
 
                     carousel.append(carouselInner)
+
+                    console.log(carousel)
                 } else {
 
                 }
