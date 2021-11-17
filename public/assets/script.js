@@ -109,12 +109,14 @@ getPhotos = () => {
                     instaStuff.children.data.forEach(function(img, i){
                         console.log("CHILDREN DATA IMAGE", img)
                         console.log(i)
-                    })
-
 
                         let carouselImg = document.createElement("img")
                         carouselImg.setAttribute("class", "d-block w-100")
-                        carouselImg.setAttribute("src", instaStuff.children.data[i].media_url)
+                        carouselImg.setAttribute("src", img.media_url)
+
+                    })
+
+
 
                         // carouselItem.append(carouselImg)
                         console.log("CAROUSEL IMAGE", carouselImg)
