@@ -84,7 +84,7 @@ getPhotos = () => {
                 let instaStuff = data[0].data[i];
                 console.log("iNSTA STUFF", instaStuff)
 
-                if (instaStuff.media_type === "IMAGE" || instaStuff.media_type === "CAROUSEL_ALBUM") {
+                if (instaStuff.media_type === "IMAGE") {
 
                     let imageTag = document.createElement("img");
                     imageTag.setAttribute("src", instaStuff.media_url)
@@ -92,41 +92,42 @@ getPhotos = () => {
                     imageTag.setAttribute("class", "igIMG card-img-top")
 
                     let imageCaption = document.createElement("h4")
-                    imageCaption.setAttribute("class","card-text")
+                    imageCaption.setAttribute("class", "card-text")
                     imageCaption.textContent = instaStuff.caption
 
                     card.append(imageTag)
                     cardBody.append(imageCaption)
                     card.append(cardBody)
-                    
-
-                } 
-                // else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
-
-                    // let carousel = document.createElement("div")
-                    // carousel.setAttribute("class", "carousel slide")
-                    // carousel.setAttribute("data-ride", "carousel")
-
-                    // let carouselInner = document.createElement("div")
-                    // carouselInner.setAttribute("class", "carousel-inner")
-
-                    // let carouselItem = document.createElement("div")
-                    // carouselItem.setAttribute("class", "carousel-item")
-
-                    // let carouselImg = document.createElement("img")
-                    // carouselImg.setAttribute("class", "d-block w-100")
 
 
-                    // carousel.append(carouselInner)
+                } else if (instaStuff.media_type === "CAROUSEL_ALBUM") {
 
-                    // // for loop
-                    // carouselInner.append(carouselItem)
+                    let carousel = document.createElement("div")
+                    carousel.setAttribute("class", "carousel slide")
+                    carousel.setAttribute("data-ride", "carousel")
+
+                    let carouselInner = document.createElement("div")
+                    carouselInner.setAttribute("class", "carousel-inner")
+
+                    let carouselItem = document.createElement("div")
+                    carouselItem.setAttribute("class", "carousel-item")
+
+                    let carouselImg = document.createElement("img")
+                    carouselImg.setAttribute("class", "d-block w-100")
+                    carouselImg.setAttribute("src", instaStuff.media_url)
+
+                    carousel.append(carouselInner)
+
+                    carouselInner.append(carouselItem)
+
+                    carouselItem.append(carouselImg)
 
 
 
-                // } else {
 
-                // }
+                } else {
+
+                }
 
                 igFeedDiv.append(card)
 
