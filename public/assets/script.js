@@ -1,6 +1,5 @@
 let igUsernameInput = document.getElementById("username");
 const authIgBtn = document.getElementById("authBtn");
-const igConnectBtn = document.getElementById("connectBtn")
 const getPhotoBtn = document.getElementById("photoBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
@@ -15,18 +14,6 @@ function getURL() {
     console.log(splitQuery)
 }
 getURL();
-
-igConnectBtn.addEventListener("click", function () {
-    //let username = igUsernameInput.value.trim();
-    //other(splitQuery)
-
-    notification.removeAttribute("class")
-
-    setTimeout(function () {
-        notification.setAttribute("class", "hide");
-    }, 3000);
-
-})
 
 authIgBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
@@ -55,6 +42,11 @@ if(!splitQuery){
     console.log("splitquery undefined")
 }
 else {
+    notification.removeAttribute("class")
+
+    setTimeout(function () {
+        notification.setAttribute("class", "hide");
+    }, 3000);
     console.log("splitquery")
     postAuthCode(splitQuery)
 }
