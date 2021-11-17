@@ -62,12 +62,15 @@ getPhotos = () => {
 
         for(var i = 0; i < data[0].length; i++){
 
-            let card = document.createElement("div").setAttribute("class", "card")
-            let cardBody = document.createElement("div").setAttribute("class", "card-body")
+            let card = document.createElement("div")
+            card.setAttribute("class", "card")
+            let cardBody = document.createElement("div")
+            cardBody.setAttribute("class", "card-body")
 
         let imageTag = document.createElement("img");
         imageTag.setAttribute("src", data[0][i])
         imageTag.setAttribute("width", "50%")
+        
 
         cardBody.append(imageTag)
         card.append(cardBody)
