@@ -1,6 +1,5 @@
 let igUsernameInput = document.getElementById("username");
 const authIgBtn = document.getElementById("authBtn");
-const getPhotoBtn = document.getElementById("photoBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
 
@@ -21,12 +20,6 @@ authIgBtn.addEventListener("click", function () {
     //let username = igUsernameInput.value.trim();
     authIg()
     console.log("clicked")
-
-})
-
-getPhotoBtn.addEventListener("click", function () {
-    //let username = igUsernameInput.value.trim();
-    getPhotos();
 
 })
 
