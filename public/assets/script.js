@@ -78,8 +78,8 @@ getPhotos = () => {
 
                 let card = document.createElement("div")
                 card.setAttribute("class", "card")
-                // let cardBody = document.createElement("div")
-                // cardBody.setAttribute("class", "card-body")
+                let cardBody = document.createElement("div")
+                cardBody.setAttribute("class", "card-body")
 
                 let instaStuff = data[0].data[i];
                 console.log("iNSTA STUFF", instaStuff)
