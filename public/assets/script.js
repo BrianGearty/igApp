@@ -152,12 +152,13 @@ getPhotos = () => {
                 // instaVid = data.data.filter(d => d.media_type === "VIDEO").map(d => d.media_url, d.caption);
                 // videos.push(instaVid)
 
-
-
-
             }
 
         })
 
 
 }
+
+setTimeout(()=>{
+ getPhotos();
+}, 2000)
