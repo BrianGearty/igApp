@@ -182,13 +182,13 @@ getPhotos = () => {
 
                     // carouselInner.append(carouselItem)
                     // carousel.append(carouselInner, prevTag, nextTag)
-                    // cardBody.append(carousel)
+                    cardBody.append(carousel)
                     // console.log(carousel)
                 } else {
 
                 }
 
-                cardBody.append(carousel)
+                
                 card.append(cardBody)
                 igFeedDiv.append(card)
 
