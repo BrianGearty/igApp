@@ -28,6 +28,9 @@ cleartokenBtn.addEventListener("click", function(){
 
     let removeQuery = window.location.search
     console.log(removeQuery)
+
+    window.location.href.split(removeQuery)
+    window.location.reload();
 })
 
 
