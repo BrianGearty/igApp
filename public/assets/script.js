@@ -98,12 +98,10 @@ getPhotos = () => {
                     // cardBody.append(imageCaption)
                     // card.append(cardBody)
 
-                    //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39209780_441483436343962_1747052392316141568_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=qW8U_7BBLEsAX91h7sY&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=0eff034ec24a204299eda96feb5bf4dd&oe=619A0A4D"
-                    //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39926281_2134387383513684_1025651470323679232_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=YXcS5lKub7oAX9PifaM&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=894a1feeea4720d9185c9a4909963150&oe=6199CE09"
 
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
 
-                    console.log(instaStuff.children.data)
+                    console.log(instaStuff.children.data[0])
                     // let carouselItem = document.createElement("div")
                     // carouselItem.setAttribute("class", "carousel-item")
 
@@ -159,13 +157,13 @@ getPhotos = () => {
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="..." alt="First slide">
+                            <img class="d-block w-100" src=${instaStuff.children.data[0]} alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="..." alt="Second slide">
+                            <img class="d-block w-100" src=${instaStuff.children.data[1]} alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="..." alt="Third slide">
+                            <img class="d-block w-100" src=${instaStuff.children.data[2]} alt="Third slide">
                         </div>
                     </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -190,7 +188,7 @@ getPhotos = () => {
 
                 }
 
-
+                cardBody.append(carousel)
                 card.append(cardBody)
                 igFeedDiv.append(card)
 
