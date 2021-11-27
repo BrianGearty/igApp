@@ -119,14 +119,40 @@ getPhotos = () => {
                     let carousel = document.createElement("div")
                     carousel.setAttribute("class", "carousel slide")
                     carousel.setAttribute("data-ride", "carousel")
+                    carousel.setAttribute("id", "carouselControls")
 
                     let carouselInner = document.createElement("div")
                     carouselInner.setAttribute("class", "carousel-inner")
 
+                    let prevTag = document.createElement("a")
+                    let nextTag = document.createElement("a")
+                    prevTag.setAttribute("class", "carousel-control-prev")
+                    prevTag.setAttribute("href", "#carouselControls")
+                    prevTag.setAttribute("role", "button")
+                    prevTag.setAttribute("data-slide", "prev")
+                    nextTag.setAttribute("class", "carousel-control-next")
+                    nextTag.setAttribute("href", "#carouselControls")
+                    nextTag.setAttribute("role", "button")
+                    nextTag.setAttribute("data-slide", "next")
+
+                    let prevSpan = document.createElement("span")
+                    let nextSpan = document.createElement("span")
+                    prevSpan.setAttribute("class", "carousel-control-prev-icon")
+                    prevSpan.setAttribute("aria-hidden", "true")
+                    nextSpan.setAttribute("class", "carousel-control-next-icon")
+                    nextSpan.setAttribute("aria-hidden", "true")
+
+                    prevTag.append(prevSpan)
+                    nextTag.append(nextSpan)
+
+
+
+
+
 
 
                     carouselInner.append(carouselItem)
-                    carousel.append(carouselInner)
+                    carousel.append(carouselInner, prevTag, nextTag)
                     console.log(carousel)
                 } else {
 
