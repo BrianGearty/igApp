@@ -161,9 +161,13 @@ getPhotos = () => {
                     let video = document.createElement("video")
                     video.setAttribute("width", "320")
                     video.setAttribute("height", "240")
-                    video.setAttribute("src", instaStuff.media_url )
+                    video.setAttribute("controls")
 
+                    let source = document.createElement("source")
+                    source.setAttribute("src", instaStuff.media_url)
+                    source.setAttribute("type", "video/mp4")
 
+                    video.append(source)
                     card.append(video)
                 }
 
