@@ -85,18 +85,18 @@ getPhotos = () => {
 
                 if (instaStuff.media_type === "IMAGE") {
 
-                    // let imageTag = document.createElement("img");
-                    // imageTag.setAttribute("src", instaStuff.media_url)
-                    // imageTag.setAttribute("width", "50%")
-                    // imageTag.setAttribute("class", "igIMG card-img-top")
+                    let imageTag = document.createElement("img");
+                    imageTag.setAttribute("src", instaStuff.media_url)
+                    imageTag.setAttribute("width", "50%")
+                    imageTag.setAttribute("class", "igIMG card-img-top")
 
-                    // let imageCaption = document.createElement("h4")
-                    // imageCaption.setAttribute("class", "card-text")
-                    // imageCaption.textContent = instaStuff.caption
+                    let imageCaption = document.createElement("h4")
+                    imageCaption.setAttribute("class", "card-text")
+                    imageCaption.textContent = instaStuff.caption
 
-                    // card.append(imageTag)
-                    // cardBody.append(imageCaption)
-                    // card.append(cardBody)
+                    card.append(imageTag)
+                    cardBody.append(imageCaption)
+                    card.append(cardBody)
 
 
                 } else if (instaStuff.media_type === 'CAROUSEL_ALBUM') {
@@ -153,43 +153,22 @@ getPhotos = () => {
                     // prevTag.append(prevSpan)
                     // nextTag.append(nextSpan)
 
-                    let carousel = `
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[0].media_url)} alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[1].media_url)} alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[2].media_url)} alt="Third slide">
-                        </div>
-                    </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>`
-
-
-
-
-
                     // carouselInner.append(carouselItem)
                     // carousel.append(carouselInner, prevTag, nextTag)
-                    cardBody.innerHTML = carousel
                     // console.log(carousel)
-                } else {
+                } else if (instaStuff.media_type === 'VIDEO') {
 
+                    let video = document.createElement("video")
+                    video.setAttribute("width", "320")
+                    video.setAttribute("height", "240")
+                    video.setAttribute("src", instaStuff.media_url )
+
+
+                    card.append(video)
                 }
 
                 
-                card.append(cardBody)
+                //card.append(cardBody)
                 igFeedDiv.append(card)
 
                 // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
