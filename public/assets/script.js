@@ -25,13 +25,13 @@ authIgBtn.addEventListener("click", function () {
 })
 
 cleartokenBtn.addEventListener("click", function(){
+    window.location.href = "https://stark-chamber-84959.herokuapp.com/"
+    // let removeQuery = window.location.search
+    // console.log(removeQuery)
 
-    let removeQuery = window.location.search
-    console.log(removeQuery)
-
-    let url = window.location.href.split(removeQuery)
+    // let url = window.location.href.split(removeQuery)
     //window.location.reload();
-    console.log(url)
+    // console.log(url)
 })
 
 
