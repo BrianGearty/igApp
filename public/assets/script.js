@@ -78,18 +78,18 @@ getPhotos = () => {
 
                 if (instaStuff.media_type === "IMAGE") {
 
-                    let imageTag = document.createElement("img");
-                    imageTag.setAttribute("src", instaStuff.media_url)
-                    imageTag.setAttribute("width", "50%")
-                    imageTag.setAttribute("class", "igIMG card-img-top")
+                    // let imageTag = document.createElement("img");
+                    // imageTag.setAttribute("src", instaStuff.media_url)
+                    // imageTag.setAttribute("width", "50%")
+                    // imageTag.setAttribute("class", "igIMG card-img-top")
 
-                    let imageCaption = document.createElement("h4")
-                    imageCaption.setAttribute("class", "card-text")
-                    imageCaption.textContent = instaStuff.caption
+                    // let imageCaption = document.createElement("h4")
+                    // imageCaption.setAttribute("class", "card-text")
+                    // imageCaption.textContent = instaStuff.caption
 
-                    card.append(imageTag)
-                    cardBody.append(imageCaption)
-                    card.append(cardBody)
+                    // card.append(imageTag)
+                    // cardBody.append(imageCaption)
+                    // card.append(cardBody)
 
                     //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39209780_441483436343962_1747052392316141568_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=qW8U_7BBLEsAX91h7sY&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=0eff034ec24a204299eda96feb5bf4dd&oe=619A0A4D"
                     //"https://scontent-iad3-2.cdninstagram.com/v/t51.2885-15/39926281_2134387383513684_1025651470323679232_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=YXcS5lKub7oAX9PifaM&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=894a1feeea4720d9185c9a4909963150&oe=6199CE09"
@@ -106,8 +106,9 @@ getPhotos = () => {
                         console.log("img index", i)
                         
 
-                        carouselImg.setAttribute("class", "d-block w-100")
+                        carouselImg.setAttribute("class", "d-block w-100 card-image-top")
                         carouselImg.setAttribute("src", img.media_url)
+                        carouselImg.setAttribute("alt", "carousel picture")
 
                         
                         carouselItem.append(carouselImg)
@@ -153,13 +154,14 @@ getPhotos = () => {
 
                     carouselInner.append(carouselItem)
                     carousel.append(carouselInner, prevTag, nextTag)
+                    cardBody.append(carousel)
                     console.log(carousel)
                 } else {
 
                 }
 
 
-                card.append(carousel)
+                card.append(cardBody)
                 igFeedDiv.append(card)
 
                 // instaPhotos = data.data.filter(d => d.media_type === "IMAGE").map(d => d.media_url, d.caption);
