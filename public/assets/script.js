@@ -182,7 +182,7 @@ getPhotos = () => {
 
                     // carouselInner.append(carouselItem)
                     // carousel.append(carouselInner, prevTag, nextTag)
-                    cardBody.append(carousel)
+                    cardBody.innerHTML(carousel)
                     // console.log(carousel)
                 } else {
 
