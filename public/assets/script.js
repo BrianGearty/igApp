@@ -26,7 +26,6 @@ authIgBtn.addEventListener("click", function () {
 
 cleartokenBtn.addEventListener("click", function(){
     window.location.href = "https://stark-chamber-84959.herokuapp.com/"
-    window.location.reload()
 })
 
 
