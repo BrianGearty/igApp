@@ -157,13 +157,13 @@ getPhotos = () => {
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[0])} alt="First slide">
+                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[0].media_url)} alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[1])} alt="Second slide">
+                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[1].media_url)} alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[2])} alt="Third slide">
+                            <img class="d-block w-100" src=${JSON.stringify(instaStuff.children.data[2].media_url)} alt="Third slide">
                         </div>
                     </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
