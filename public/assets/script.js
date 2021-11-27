@@ -65,7 +65,6 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
-            console.log("CAROUSEL FROM /API/INSTA", data[0].data[i])
 
             for (var i = 0; i < data[0].data.length; i++) {
 
@@ -113,7 +112,7 @@ getPhotos = () => {
                         
                         carouselItem.append(carouselImg)
 
-                        console.log("CAROUSEL Item", carouselItem)
+                        //console.log("CAROUSEL Item", carouselItem)
                     })
                     
 
