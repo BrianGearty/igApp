@@ -139,9 +139,9 @@ getPhotos = () => {
                     let prevSpan = document.createElement("span")
                     let nextSpan = document.createElement("span")
                     prevSpan.setAttribute("class", "carousel-control-prev-icon")
-                    prevSpan.setAttribute("aria-hidden", "true")
+                    prevSpan.setAttribute("aria-hidden", "false")
                     nextSpan.setAttribute("class", "carousel-control-next-icon")
-                    nextSpan.setAttribute("aria-hidden", "true")
+                    nextSpan.setAttribute("aria-hidden", "false")
 
                     prevTag.append(prevSpan)
                     nextTag.append(nextSpan)
