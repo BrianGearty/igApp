@@ -30,7 +30,7 @@ cleartokenBtn.addEventListener("click", function(){
     console.log(removeQuery)
 
     let url = window.location.href.split(removeQuery)
-    window.location.reload();
+    //window.location.reload();
     console.log(url)
 })
 
