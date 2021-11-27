@@ -1,5 +1,6 @@
 let igUsernameInput = document.getElementById("username");
 const authIgBtn = document.getElementById("authBtn");
+const cleartokenBtn = document.getElementById("clearTokenBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
 
@@ -22,6 +23,14 @@ authIgBtn.addEventListener("click", function () {
     console.log("clicked")
 
 })
+
+cleartokenBtn.addEventListener("click", function(){
+
+    let removeQuery = window.location.search
+    console.log(removeQuery)
+})
+
+
 
 authIg = () => {
     let appId = "215321604061729";
