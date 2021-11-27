@@ -158,10 +158,10 @@ getPhotos = () => {
                     // console.log(carousel)
                 } else if (instaStuff.media_type === 'VIDEO') {
 
-                    let video = document.createElement("video")
+                    let video = document.createElement("video controls" )
                     video.setAttribute("width", "320")
                     video.setAttribute("height", "240")
-                    video.setAttribute("controls")
+                    
 
                     let source = document.createElement("source")
                     source.setAttribute("src", instaStuff.media_url)
