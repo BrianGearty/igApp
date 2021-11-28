@@ -55,7 +55,7 @@ else {
     postAuthCode(splitQuery)
 }
 
-postAuthCode = (query) => {
+function postAuthCode(query) {
 
     const searchParams = `redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
