@@ -90,8 +90,8 @@ getPhotos = () => {
                     imageTag.setAttribute("width", "50%")
                     imageTag.setAttribute("class", "igIMG card-img-top")
 
-                    let imageCaption = document.createElement("h4")
-                    imageCaption.setAttribute("class", "card-text")
+                    let imageCaption = document.createElement("h5")
+                    imageCaption.setAttribute("class", "card-text caption")
                     imageCaption.textContent = instaStuff.caption
 
                     card.append(imageTag)
@@ -162,14 +162,19 @@ getPhotos = () => {
                     video.setAttribute("width", "50%")
                     video.setAttribute("class", "igIMG")
                     video.setAttribute("controls", "play pause")
+
+                    let vidCaption = document.createElement("h5")
+                    vidCaption.setAttribute("class", "card-text caption")
+                    vidCaption.textContent = instaStuff.caption
                     
 
                     let source = document.createElement("source")
                     source.setAttribute("src", instaStuff.media_url)
                     source.setAttribute("type", "video/mp4")
 
+                    cardBody.append(vidCaption)
                     video.append(source)
-                    card.append(video)
+                    card.append(video, cardBody)
                 }
 
                 
