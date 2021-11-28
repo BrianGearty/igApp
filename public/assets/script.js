@@ -159,8 +159,8 @@ getPhotos = () => {
                 } else if (instaStuff.media_type === 'VIDEO') {
 
                     let video = document.createElement("video" )
-                    video.setAttribute("width", "320")
-                    video.setAttribute("height", "240")
+                    video.setAttribute("width", "50%")
+                    
                     video.setAttribute("controls", "play pause")
                     
 
