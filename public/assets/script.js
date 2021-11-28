@@ -3,6 +3,7 @@ const authIgBtn = document.getElementById("authBtn");
 const cleartokenBtn = document.getElementById("clearTokenBtn")
 const igFeedDiv = document.getElementById("instagramFeed")
 const notification = document.getElementById("notification")
+const usernameEl = document.getElementById("username")
 
 let photos = []
 let videos = []
@@ -72,7 +73,9 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
-            console.log("DATAAAA", data)
+            console.log("DATAAAA", data[0].data[0].username)
+
+            usernameEl.append(data[0].data[0].username)
 
             for (var i = 0; i < data[0].data.length; i++) {
 
