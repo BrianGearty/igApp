@@ -160,7 +160,7 @@ getPhotos = () => {
 
                     let video = document.createElement("video" )
                     video.setAttribute("width", "50%")
-                    
+                    video.setAttribute("class", "igIMG")
                     video.setAttribute("controls", "play pause")
                     
 
