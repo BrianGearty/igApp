@@ -72,6 +72,7 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
+            console.log("DATAAAA", data)
 
             for (var i = 0; i < data[0].data.length; i++) {
 
