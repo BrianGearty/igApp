@@ -11,7 +11,7 @@ let carousel = []
 
 let splitQuery;
 
-function getURL() {
+getURL = () => {
     let query = window.location.search;
     splitQuery = query.split("=")[1];
     console.log(splitQuery)
@@ -55,7 +55,7 @@ else {
     postAuthCode(splitQuery)
 }
 
-function postAuthCode(query) {
+postAuthCode = (query) => {
 
     const searchParams = `redirect_uri=https://stark-chamber-84959.herokuapp.com/&code=${query}`
 
