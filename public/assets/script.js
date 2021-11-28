@@ -73,7 +73,6 @@ getPhotos = () => {
     fetch("/api/insta")
         .then(response => response.json())
         .then(data => {
-            console.log("DATAAAA", data[0].data[0].username)
 
             usernameEl.append(data[0].data[0].username)
 
@@ -85,7 +84,7 @@ getPhotos = () => {
                 cardBody.setAttribute("class", "card-body")
 
                 let instaStuff = data[0].data[i];
-                console.log("iNSTA STUFF", instaStuff)
+                //console.log("iNSTA STUFF", instaStuff)
 
                 if (instaStuff.media_type === "IMAGE") {
 
