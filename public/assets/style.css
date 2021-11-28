@@ -12,7 +12,6 @@
 }
 
 .caption{
-    display: block;
-    text-align: center;
+    margin: 50%;
     width: 50%;
 }
