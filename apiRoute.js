@@ -54,7 +54,7 @@ async function getUser(userInfo){
         
     }
 }
-
+// sending data to front end
 router.get("/api/insta", (req, res)=>{
     res.send(igData)
 console.log("hit get back end call")
